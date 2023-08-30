@@ -1,6 +1,15 @@
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials"
 
+type User = {
+  id: string,
+  name: string, 
+  email: string,
+  password: string,
+  image: string
+}
+
+
 const handler = NextAuth({
   providers: [
     CredentialsProvider({
@@ -10,11 +19,13 @@ const handler = NextAuth({
         password: { label: "Password", type: "password" }
       },
       async authorize(credentials,req){
-        const user = {
+        
+        const user: User = {
           id: "1",
-          fullname: 'keiner', 
+          name: 'keiner', 
           email: 'keiner@mail.com',
-          password: '1234567'
+          password: '1234567',
+          image: 'pendiente'
         }
         
         if(credentials?.email === user.email && credentials.password === user.password){
@@ -27,11 +38,12 @@ const handler = NextAuth({
   ],
   callbacks: {
     jwt({account, token, user, profile, session}){
+      
       if (user) token.user = user;
       return token
     },
     session({session, token}){
-      session.user = token.user as any;
+      session.user = token.user as User;
       return session;
     }
   },

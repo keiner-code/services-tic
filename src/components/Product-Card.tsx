@@ -7,28 +7,31 @@ import { showModalProduct} from "@/features/state/stateSlice";
 import { getIdProduct } from "@/features/state/stateSlice";
 import { Product } from "@/types";
 
-export default function ProductCard({id, name, amount, description, image}: Product) {
+type Props = {
+  product: Product
+}
+export default function ProductCard({product}: Props) {
   const state = useSelector((value: RootState) => value.state.showModalProduct);
-  const dispatch = useDispatch();
   
+  const dispatch = useDispatch();
   const handlerSubmit = (id: number) => {
     dispatch(getIdProduct(id))
     dispatch(showModalProduct())
   }
   
   return (
-    <div className="float-left" onClick={() => handlerSubmit(id)}>
+    <div className="float-left" onClick={() => handlerSubmit(product.id)}>
     <Card className="py-4 border m-4 w-72  shadow-lg cursor-pointer">
       <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
-        <p className="text-tiny uppercase font-bold">{name}</p>
-        <small className="text-default-500">{amount} Productos disponible</small>
-        <h4 className="font-bold text-large">{description}</h4>
+        <p className="text-tiny uppercase font-bold">{product.name}</p>
+        <small className="text-default-500">{product.amount} Productos disponible</small>
+        <h4 className="font-bold text-large">{product.description}</h4>
       </CardHeader>
       <CardBody className="overflow-visible py-2 flex justify-center">
         <Image
           alt="Card background"
           className="object-cover rounded-xl"
-          src={image}
+          src={product.image1}
         />
       </CardBody>
     </Card>

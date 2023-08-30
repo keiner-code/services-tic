@@ -3,12 +3,8 @@ import Carousel from "@/components/Carousel";
 import ProductCard from "@/components/Product-Card";
 import ServiceCard from "@/components/Services-Card";
 import { useGetAllProductsQuery } from "@/services/productApi";
-import { useSession } from "next-auth/react";
 
 export default function HomeContent() {
-  const {data: session, status} = useSession();
-  console.log(session, status);
-
   const {isLoading, isFetching, data, error} = useGetAllProductsQuery(null);
 
 
@@ -20,14 +16,7 @@ export default function HomeContent() {
       </div>
       <div className="float-left ml-5">
         {data?.map((value) => (
-          <ProductCard
-            name={value.name}
-            amount={value.amount}
-            description={value.description}
-            image={value.image}
-            id={value.id}
-            key={value.id}
-          />
+          <ProductCard product={value} key={value.id} />
         ))}
       </div>
       <div className="text-center my-10 w-10/12 h-28 md:h-14 pt-2 font-medium text-blue-500 rounded-md text-2xl">

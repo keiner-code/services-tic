@@ -13,15 +13,12 @@ import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
 import { useGetProductByIdQuery } from "@/services/productApi";
 
-type Props = {
-    id: number
-}
-
 export default function ProductDetailsCard() {
   const state = useSelector((value: RootState) => value.state.showModalProduct);
   const id = useSelector((value: RootState) => value.state.idProduct);
 
   const {isLoading, isFetching, data, error} = useGetProductByIdQuery({id: id.toString()});
+  console.log(data);
 
   const dispatch = useDispatch();
   const [amount, setAmount] = useState<number>(1);
@@ -64,8 +61,8 @@ export default function ProductDetailsCard() {
               <div>
                 <Image
                   className="w-20 mb-2 cursor-pointer"
-                  src={data?.image}
-                  onMouseOver={()=>setImage(data?.image)}
+                  src={data?.image1}
+                  onMouseOver={()=>setImage(data?.image1)}
                   alt="img1"
                 />
                 <Image
@@ -76,8 +73,8 @@ export default function ProductDetailsCard() {
                 />
                 <Image
                   className="w-20 mb-2 cursor-pointer"
-                  src={data?.image}
-                  onMouseOver={()=>setImage(data?.image)}
+                  src={data?.image1}
+                  onMouseOver={()=>setImage(data?.image1)}
                   alt="img3"
                 />
                 <Image
@@ -89,7 +86,7 @@ export default function ProductDetailsCard() {
               </div>
               <Image
                 className="w-[21.5rem] ml-2"
-                src={`${image ? image : data?.image}`}
+                src={`${image ? image : data?.image1}`}
                 alt="img1"
               />
             </div>
