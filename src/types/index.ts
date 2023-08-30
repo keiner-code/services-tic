@@ -19,3 +19,22 @@ export interface TypeState {
   idProduct: number
 }
 
+export interface User{
+  id: number;
+  name: string;
+  identification: number;
+  image: string;
+  rol: string;
+  email: string;
+  password: string;
+  state: string;
+};
+
+export interface Service{
+  id: number,
+  name: string,
+  description: string,
+  info: string,
+  phone: number,
+  image: string
+}

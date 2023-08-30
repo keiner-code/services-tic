@@ -3,7 +3,7 @@ import { CardHeader,Card, Image, CardFooter, Button } from "@nextui-org/react";
 
 export default function ServiceCard(){
   return(
-    <div className="gap-2 grid grid-cols-12 grid-rows-2 px-8 mb-10">
+    <div className="gap-2 grid grid-cols-12 grid-rows-2 px-8 mb-10 w-full">
     <Card className="col-span-12 sm:col-span-4 h-[300px]">
       <CardHeader className="absolute z-10 top-1 flex-col !items-start">
         <p className="text-tiny text-white/60 uppercase font-bold">Soporte Tecnico</p>

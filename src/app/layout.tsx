@@ -1,15 +1,12 @@
 "use client";
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import { Providers } from "./providers";
+import { NextUIProvider } from "@nextui-org/react";
 import { Nav } from "@/components/Nav";
 import Footer from "@/components/Footer";
 import { store } from "./store";
 import { Provider } from "react-redux";
-import {SessionProvider} from 'next-auth/react'
-
-const inter = Inter({ subsets: ["latin"] });
+import { SessionProvider } from "next-auth/react";
 
 export const metadata: Metadata = {
   title: "Servicio TIC",
@@ -23,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      <body className="">
+      <body>
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -32,13 +29,13 @@ export default function RootLayout({
           referrerPolicy="no-referrer"
         />
         <SessionProvider>
-        <Provider store={store}>
-          <Providers>
-            <Nav />
-            {children}
-            <Footer />
-          </Providers>
-        </Provider>
+          <Provider store={store}>
+            <NextUIProvider>
+              <Nav />
+              {children}
+              <Footer />
+            </NextUIProvider>
+          </Provider>
         </SessionProvider>
       </body>
     </html>

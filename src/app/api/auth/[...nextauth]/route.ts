@@ -1,55 +1,52 @@
 import NextAuth from "next-auth";
-import CredentialsProvider from "next-auth/providers/credentials"
-
-type User = {
-  id: string,
-  name: string, 
-  email: string,
-  password: string,
-  image: string
-}
-
+import CredentialsProvider from "next-auth/providers/credentials";
+import { pool } from "@/database/config";
+import { RowDataPacket } from "mysql2";
+import type { User } from "@/types";
 
 const handler = NextAuth({
   providers: [
     CredentialsProvider({
-      name: 'Credentials',
+      name: "Credentials",
       credentials: {
         email: { label: "Email", type: "email", placeholder: "jsmith" },
-        password: { label: "Password", type: "password" }
+        password: { label: "Password", type: "password" },
       },
-      async authorize(credentials,req){
-        
-        const user: User = {
-          id: "1",
-          name: 'keiner', 
-          email: 'keiner@mail.com',
-          password: '1234567',
-          image: 'pendiente'
+      async authorize(credentials, req) {
+        const connection = await pool.getConnection();
+        try {
+          const [rows] = (await connection.query(
+            "SELECT * FROM users WHERE email = ?",
+            [credentials?.email]
+          )) as RowDataPacket[];
+
+          if (rows.length === 1 && credentials?.password === rows[0].password) {
+            return rows[0];
+          } else {
+            return null;
+          }
+        } catch (error) {
+          console.error("Error de la base de datos:", error);
+          return null;
+        } finally {
+          connection.release();
         }
-        
-        if(credentials?.email === user.email && credentials.password === user.password){
-          return user;
-        }else{
-          throw new Error("Invalid credenciales")
-        }
-      }
-    })
+      },
+    }),
   ],
   callbacks: {
-    jwt({account, token, user, profile, session}){
-      
+    jwt({ account, token, user, profile, session }) {
       if (user) token.user = user;
-      return token
+      return token;
     },
-    session({session, token}){
+    session({ session, token }) {
       session.user = token.user as User;
       return session;
-    }
+    },
   },
   pages: {
-    signIn: "/login"
-  }
-})
+    signIn: "/login",
+  },
+});
 
-export {handler as GET, handler as POST}
+export { handler as GET, handler as POST };

@@ -67,20 +67,20 @@ export default function ProductDetailsCard() {
                 />
                 <Image
                   className="w-20 mb-2 cursor-pointer"
-                  src="https://img.freepik.com/vector-gratis/cool-hotdog-gafas-sombrero-icono-dibujos-animados-ilustracion-icono-moda-alimentos-aislado-estilo-dibujos-animados-plana_138676-3114.jpg?w=740&t=st=1693095341~exp=1693095941~hmac=ed64be8f5a5f5a53fea0ebb6261a533a0b43a01c51b746373930a5df0a434ab5"
+                  src={data?.image2}
                   alt="img2"
-                  onMouseOver={()=>setImage("https://img.freepik.com/vector-gratis/cool-hotdog-gafas-sombrero-icono-dibujos-animados-ilustracion-icono-moda-alimentos-aislado-estilo-dibujos-animados-plana_138676-3114.jpg?w=740&t=st=1693095341~exp=1693095941~hmac=ed64be8f5a5f5a53fea0ebb6261a533a0b43a01c51b746373930a5df0a434ab5")}
+                  onMouseOver={()=>setImage(data?.image2)}
                 />
                 <Image
                   className="w-20 mb-2 cursor-pointer"
-                  src={data?.image1}
-                  onMouseOver={()=>setImage(data?.image1)}
+                  src={data?.image3}
+                  onMouseOver={()=>setImage(data?.image3)}
                   alt="img3"
                 />
                 <Image
                   className="w-20 mb-2 cursor-pointer"
-                  src="https://img.freepik.com/vector-gratis/cool-hotdog-gafas-sombrero-icono-dibujos-animados-ilustracion-icono-moda-alimentos-aislado-estilo-dibujos-animados-plana_138676-3114.jpg?w=740&t=st=1693095341~exp=1693095941~hmac=ed64be8f5a5f5a53fea0ebb6261a533a0b43a01c51b746373930a5df0a434ab5"
-                  onMouseOver={()=>setImage("https://img.freepik.com/vector-gratis/cool-hotdog-gafas-sombrero-icono-dibujos-animados-ilustracion-icono-moda-alimentos-aislado-estilo-dibujos-animados-plana_138676-3114.jpg?w=740&t=st=1693095341~exp=1693095941~hmac=ed64be8f5a5f5a53fea0ebb6261a533a0b43a01c51b746373930a5df0a434ab5")}
+                  src={data?.image4}
+                  onMouseOver={()=>setImage(data?.image4)}
                   alt="img4"
                 />
               </div>

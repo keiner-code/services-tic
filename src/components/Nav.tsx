@@ -18,38 +18,21 @@ import Image from "next/image";
 import logo from "@/assets/images/logo.png";
 import { useState } from "react";
 import { signOut, useSession } from "next-auth/react";
+
+//hay que tiparlo
 type option = {
   menuService?: boolean;
+  menuEmpresa?: boolean
 };
-
 export function Nav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [state, dispatch] = useState<option>({ menuService: false });
+  const [state, dispatch] = useState<option>(
+    { //aqui es para inicializar la variable
+      menuService: false,
+      menuEmpresa: false
+    }
+  );
   const { data: session, status } = useSession();
-  
-  const menuItems = [
-    {
-      item: "Home",
-    },
-    {
-      item: "Soporte Tecnico",
-    },
-    {
-      item: "Desarrollo Web",
-    },
-    {
-      item: "Asesoria",
-    },
-    {
-      item: "Big Data",
-    },
-    {
-      item: "Marketing",
-    },
-    {
-      item: "Iniciar Session",
-    },
-  ];
 
   return (
     <Navbar
@@ -84,12 +67,12 @@ export function Nav() {
           </Link>
         </NavbarItem>
 
+        {/*copiar todo el dropdown */}
         <Dropdown>
           <NavbarItem>
             <DropdownTrigger>
               <Button
                 onClick={() => dispatch({ menuService: !state.menuService })}
-                disableRipple
                 className="p-0 bg-transparent data-[hover=true]:bg-transparent font-medium text-md ml-4"
                 radius="sm"
                 variant="light"
@@ -111,31 +94,58 @@ export function Nav() {
               base: "gap-4",
             }}
           >
-            <DropdownItem
-              key="supreme_support"
-              description="Conoce nuestra forma de hacer soporte desde tu hogar"
-            >
-              Soporte Tecnico
+            {/*tomar este codigo de referencia para los otros */}
+            <DropdownItem className="m-0 p-0">
+              <Link className="w-full h-full py-2 ml-2" href="/services">Soporte Tecnico</Link>
+            </DropdownItem>
+            {/*hasta aqu */}
+
+            <DropdownItem className="m-0 p-0">
+              <Link className="w-full h-full py-2 ml-2" href="/services">Desarrollo Web</Link>
             </DropdownItem>
 
-            <DropdownItem
-              key="supreme_support"
-              description="Contamos con personas expertas en el tema"
-            >
-              Desarrollo Web
-            </DropdownItem>
           </DropdownMenu>
         </Dropdown>
+        {/*hasta aqui */}
 
-        <NavbarItem>
-          <Link
-            color="foreground"
-            href="#"
-            className="font-medium text-md ml-4"
+        <Dropdown>
+          <NavbarItem>
+            <DropdownTrigger>
+              <Button
+                onClick={() => dispatch({ menuEmpresa: !state.menuEmpresa })}
+                className="p-0 bg-transparent data-[hover=true]:bg-transparent font-medium text-md ml-4"
+                radius="sm"
+                variant="light"
+              >
+                Empresa{" "}
+                {state.menuEmpresa ? ( //cambiar la variable por la que corresponda
+                  <i className="fa-solid fa-angle-down text-xs"></i>
+                ) : (
+                  <i className="fa-solid fa-angle-up text-xs"></i>
+                )}
+              </Button>
+            </DropdownTrigger>
+          </NavbarItem>
+
+          <DropdownMenu
+            aria-label="SE_Y_TIC features"
+            className="w-[340px]"
+            itemClasses={{
+              base: "gap-4",
+            }}
           >
-            Empresa
-          </Link>
-        </NavbarItem>
+            {/*tomar este codigo de referencia para los otros */}
+            <DropdownItem className="m-0 p-0">
+              <Link className="w-full h-full py-2 ml-2" href="/empresa">empresa 1</Link>
+            </DropdownItem>
+            {/*hasta aqu */}
+
+            <DropdownItem className="m-0 p-0">
+              <Link className="w-full h-full py-2 ml-2" href="/empresa">empresa 2</Link>
+            </DropdownItem>
+
+          </DropdownMenu>
+        </Dropdown>
 
         <NavbarItem>
           <Link
@@ -185,10 +195,10 @@ export function Nav() {
                     as="button"
                     avatarProps={{
                       isBordered: true,
-                      src: "https://i.pravatar.cc/150?u=a042581f4e29026024d",
+                      src: `${session?.user?.image}`,
                     }}
                     className="transition-transform"
-                    description="administrador"
+                    description={session?.user?.rol}
                     name={`@${session?.user?.name}`}
                   />
                 </DropdownTrigger>
@@ -197,13 +207,15 @@ export function Nav() {
                   <DropdownItem key="profile" className="h-14 gap-2">
                     <p className="font-bold">{session?.user?.name}</p>
                   </DropdownItem>
-                  <DropdownItem key="system">{session?.user?.email}</DropdownItem>
+                  <DropdownItem key="system">
+                    {session?.user?.email}
+                  </DropdownItem>
                   <DropdownItem key="configurations">Ver Perfil</DropdownItem>
                   <DropdownItem key="help_and_feedback">
                     Ayuda & Comentario
                   </DropdownItem>
                   <DropdownItem key="logout" color="danger">
-                   <button onClick={() => signOut()}> Cerrar Sesión</button>
+                    <button onClick={() => signOut()}> Cerrar Sesión</button>
                   </DropdownItem>
                 </DropdownMenu>
               </Dropdown>
@@ -213,27 +225,29 @@ export function Nav() {
       </NavbarContent>
 
       <NavbarMenu className=" top-14">
-        {menuItems.map((item, index) => (
-          <NavbarMenuItem key={`${item}-${index}`}>
-            <Link
-              color={"secondary"}
-              /* color={
-                index === 2
-                  ? "primary"
-                  : index === menuItems.length - 1
-                  ? "danger"
-                  : "foreground"
-
-                  
-              } */
-              className="w-full "
-              href="#"
-              size="lg"
-            >
-              {item.item}
-            </Link>
-          </NavbarMenuItem>
-        ))}
+        <NavbarMenuItem>
+          <Link color={"secondary"} className="w-full " href="#" size="lg">
+            Home
+          </Link>
+          <Link color={"secondary"} className="w-full " href="#" size="lg">
+            Soporte Tecnico
+          </Link>
+          <Link color={"secondary"} className="w-full " href="#" size="lg">
+            Desarrollo Web
+          </Link>
+          <Link color={"secondary"} className="w-full " href="#" size="lg">
+            Asesoria
+          </Link>
+          <Link color={"secondary"} className="w-full " href="#" size="lg">
+            Big Data
+          </Link>
+          <Link color={"secondary"} className="w-full " href="#" size="lg">
+            Marketing
+          </Link>
+          <Link color={"secondary"} className="w-full " href="#" size="lg">
+            Big Data
+          </Link>
+        </NavbarMenuItem>
       </NavbarMenu>
     </Navbar>
   );
