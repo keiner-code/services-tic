@@ -96,12 +96,28 @@ export function Nav() {
           >
             {/*tomar este codigo de referencia para los otros */}
             <DropdownItem className="m-0 p-0">
-              <Link className="w-full h-full py-2 ml-2" href="/services">Soporte Tecnico</Link>
+              <Link className="w-full h-full py-2 ml-2" href="/services">Desarrollo de Software</Link>
             </DropdownItem>
             {/*hasta aqu */}
 
             <DropdownItem className="m-0 p-0">
-              <Link className="w-full h-full py-2 ml-2" href="/services">Desarrollo Web</Link>
+              <Link className="w-full h-full py-2 ml-2" href="/services">Soporte Tecnico Especializado</Link>
+            </DropdownItem>
+
+            <DropdownItem className="m-0 p-0">
+              <Link className="w-full h-full py-2 ml-2" href="/services">Distribucion de Dispositivos Tecnologicos</Link>
+            </DropdownItem>
+
+            <DropdownItem className="m-0 p-0">
+              <Link className="w-full h-full py-2 ml-2" href="/services">Consulterias, Asesorias y Capacitaciones</Link>
+            </DropdownItem>
+
+            <DropdownItem className="m-0 p-0">
+              <Link className="w-full h-full py-2 ml-2" href="/services">Redes y Telecomunicaciones</Link>
+            </DropdownItem>
+
+            <DropdownItem className="m-0 p-0">
+              <Link className="w-full h-full py-2 ml-2" href="/services">Servicio de Inteligencia de Negocios</Link>
             </DropdownItem>
 
           </DropdownMenu>
@@ -136,12 +152,20 @@ export function Nav() {
           >
             {/*tomar este codigo de referencia para los otros */}
             <DropdownItem className="m-0 p-0">
-              <Link className="w-full h-full py-2 ml-2" href="/empresa">empresa 1</Link>
+              <Link className="w-full h-full py-2 ml-2" href="/empresa">Quienes Somos</Link>
             </DropdownItem>
             {/*hasta aqu */}
 
             <DropdownItem className="m-0 p-0">
-              <Link className="w-full h-full py-2 ml-2" href="/empresa">empresa 2</Link>
+              <Link className="w-full h-full py-2 ml-2" href="/empresa">Vision y Mision</Link>
+            </DropdownItem>
+
+            <DropdownItem className="m-0 p-0">
+              <Link className="w-full h-full py-2 ml-2" href="/empresa">Valores Corporativos</Link>
+            </DropdownItem>
+
+            <DropdownItem className="m-0 p-0">
+              <Link className="w-full h-full py-2 ml-2" href="/empresa">¿Porque elegirnos?</Link>
             </DropdownItem>
 
           </DropdownMenu>
