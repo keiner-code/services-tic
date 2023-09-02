@@ -76,7 +76,6 @@ export default function Contact() {
           <i className="fa-solid fa-envelopes-bulk text-5xl text-center w-full text-teal-400"></i>
           <h1 className="font-semibold text-center mt-4">CORREO ELECTRONICO</h1>
           <p className="mt-3 text-center text-gray-500">hello@gmail.com</p>
-          <p className="text-center text-gray-500">hello@gmail.com</p>
         </div>
       </div>
 

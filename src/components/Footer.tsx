@@ -31,8 +31,8 @@ export default function Footer() {
         <div className="w-1/3">
           <h1 className="text-lg text-gray-400 mb-3">Informacion De Contacto</h1>
           <p className="ml-4 text-xs"><i className="mr-1 mt-2 fa-solid fa-house text-sm"></i> SERVICIOS Y TIC</p>
-          <p className="ml-4 text-xs"><i className="mr-1 mt-2 fa-solid fa-mobile text-sm"></i> 3058564125,</p>
-          <p className="ml-4 text-xs"><i className="mr-1 mt-2 fa-solid fa-envelope text-sm"></i> Serviciosytic@gmail.com</p>
+          <p className="ml-4 text-xs"><i className="mr-1 mt-2 fa-solid fa-mobile text-sm"></i> 3058564125</p>
+          <p className="ml-4 text-xs"><i className="mr-1 mt-2 fa-solid fa-envelope text-sm"></i> serviciosytic@gmail.com</p>
         </div>
         
       </div>

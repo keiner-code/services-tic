@@ -10,7 +10,7 @@ export default function ContatContent(){
       </div>
       <SocialNetwords />
       <div className="text-center my-10 border-b h-28 md:h-14 pt-2 font-medium text-blue-500 rounded-md shadow-xl shadow-blue-100 border--blue-100 text-2xl">
-        Aqui Encontraras La Forma De Contactarnos
+        Nuestros Diferentes Medios para Contactarnos
       </div>
       <Contact />
     </div>

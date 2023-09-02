@@ -23,7 +23,7 @@ export default function Carrousel() {
         />
         <img
           alt="..."
-          src="ttps://img.freepik.com/foto-gratis/hombre-tiro-medio-gafas-vr_23-2149126949.jpg?w=826&t=st=1692289074~exp=1692289674~hmac=f93f6134943ed0ac0fb894cff916a5e4f85d45139062879040d1902fe0c7eca7"
+          src="https://img.freepik.com/foto-gratis/hombre-negocios-utilizar-tableta-digital_53876-108317.jpg?w=900&t=st=1693679312~exp=1693679912~hmac=32626aace3be16d7b991b3057a4c625861cca280081e17aa8d5c56ccf399a462"
         />
       </Carousel>
     </div>
