@@ -96,7 +96,7 @@ export default function ProductDetailsCard() {
                 {data?.description}
               </h1>
               <p className="text-black font-semibold mt-2">
-                Precio: $1.200.000
+                Precio: $1.800.000
               </p>
               <div className="flex mt-4">
                 <p className="text-lg text-black pt-0.5">Cantidad:</p>

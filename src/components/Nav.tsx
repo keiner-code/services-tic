@@ -171,7 +171,7 @@ export function Nav() {
           </DropdownMenu>
         </Dropdown>
 
-        <NavbarItem>
+        {/*<NavbarItem>
           <Link
             color="foreground"
             href="#"
@@ -180,7 +180,7 @@ export function Nav() {
           >
             Blog
           </Link>
-        </NavbarItem>
+        </NavbarItem>*/}
 
         <NavbarItem>
           <Link
