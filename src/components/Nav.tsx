@@ -185,7 +185,7 @@ export function Nav() {
         <NavbarItem>
           <Link
             color="foreground"
-            href="#"
+            href="/contact"
             aria-current="page"
             className="font-medium text-md ml-4"
           >

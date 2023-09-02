@@ -1,7 +1,7 @@
+import ContatContent from "@/containers/Contact-Content";
+
 export default function Contact() {
   return (
-    <div>
-      Contact      
-    </div>
+    <ContatContent />
   );
 }
