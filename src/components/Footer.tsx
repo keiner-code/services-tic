@@ -9,18 +9,20 @@ export default function Footer() {
         <div className="w-1/3">
           <h1 className="text-lg text-gray-400">Informacion Sobre Nuestra Compañia</h1>
           <p className="text-sm w-11/12 mt-2">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio
-            non, ipsam alias illo assumenda porro voluptatum iste repellat?
-            Consequuntur doloribus accusamus rerum ratione eos
+            Somos una empresa Colombiana, que brinda
+            eficientes servicios, desarrollamos sistemas de
+            información, asesorías y consultorías, contribuyendo
+            al mejoramiento continuo, alta calidad y
+            competitividad de nuestros aliados.
           </p>
         </div>
 
         <div className="w-1/3">
           <h1 className="text-lg text-gray-400 ml-8" >Nuestras Redes Sociales</h1>
           <div className="ml-5 text-sm mt-5">
-          <Link href='#'><i className="fa-brands fa-facebook ml-3 text-3xl text-blue-500"></i></Link>
-          <Link href='#'><i className="fa-brands fa-whatsapp ml-3 text-3xl text-green-500"></i></Link>
-          <Link href='#'><i className="fa-brands fa-instagram ml-3 text-3xl text-red-500"></i></Link>
+          <Link href='https://www.facebook.com/SeviciosyTic/?_rdc=1&_rdr'><i className="fa-brands fa-facebook ml-3 text-3xl text-blue-500"></i></Link>
+          <Link href='https://api.whatsapp.com/message/HJSWOBC7KST6O1?autoload=1&app_absent=0'><i className="fa-brands fa-whatsapp ml-3 text-3xl text-green-500"></i></Link>
+          <Link href='https://www.instagram.com/serviciosytic/'><i className="fa-brands fa-instagram ml-3 text-3xl text-red-500"></i></Link>
           <Link href='#'><i className="fa-brands fa-twitter ml-3 text-3xl text-blue-500"></i></Link>
           <Link href='#'><i className="fa-brands fa-youtube ml-3 text-3xl text-red-500"></i></Link>
           </div>
@@ -29,8 +31,8 @@ export default function Footer() {
         <div className="w-1/3">
           <h1 className="text-lg text-gray-400 mb-3">Informacion De Contacto</h1>
           <p className="ml-4 text-xs"><i className="mr-1 mt-2 fa-solid fa-house text-sm"></i> SERVICIOS Y TIC</p>
-          <p className="ml-4 text-xs"><i className="mr-1 mt-2 fa-solid fa-mobile text-sm"></i> 305345643</p>
-          <p className="ml-4 text-xs"><i className="mr-1 mt-2 fa-solid fa-envelope text-sm"></i> Servicio@dominio.com</p>
+          <p className="ml-4 text-xs"><i className="mr-1 mt-2 fa-solid fa-mobile text-sm"></i> 3058564125,</p>
+          <p className="ml-4 text-xs"><i className="mr-1 mt-2 fa-solid fa-envelope text-sm"></i> Serviciosytic@gmail.com</p>
         </div>
         
       </div>
