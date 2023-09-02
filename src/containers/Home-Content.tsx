@@ -16,7 +16,7 @@ export default function HomeContent() {
     <div className="w-full flex flex-col items-center">
       <Carousel />
       <div className="text-center my-10 border-b h-28 md:h-14 pt-2 font-medium text-blue-500 rounded-md shadow-xl shadow-blue-100 border--blue-100 text-2xl">
-        Aqui Podras comprar los productos que tenemos disponible
+        Comercializacion de Productos Tecnologicos
       </div>
       <div className="float-left ml-5">
         {data?.map((value) => (
@@ -40,7 +40,7 @@ export default function HomeContent() {
         <HomeService />
         </div>
         <div className="text-center my-10 border-b h-28 md:h-14 pt-2 font-medium text-blue-500 rounded-md shadow-xl shadow-blue-100 border--blue-100 text-2xl">
-            Aqui Podras Ver Nuestra Empresa
+            Informacion General de Nuestra Empresa
         </div>
         <HomeEmpresa />
       </div>

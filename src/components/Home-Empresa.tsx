@@ -12,35 +12,33 @@ export default function HomeEmpresa() {
         />
       </div>
       <div className="mt-5 p-2">
-        <h1 className="text-2xl font-semibold text-blue-500">Quines Somos</h1>
+        <h1 className="text-2xl font-semibold text-blue-500">Quienes Somos</h1>
         <p className="text-lg mt-4">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit soluta
-          voluptatibus aspernatur modi architecto fugit fuga consectetur ratione
-          magnam aut. Reiciendis ipsum a perferendis saepe pariatur ad quis
-          dolorem at?
+          Somos una empresa Colombiana, que brinda
+          eficientes servicios, desarrollamos sistemas de
+          información, asesorías y consultorías, contribuyendo
+          al mejoramiento continuo, alta calidad y
+          competitividad de nuestros aliados.
+          
         </p>
         <p className="text-lg mt-4">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit soluta
-          voluptatibus aspernatur modi architecto fugit fuga consectetur ratione
-          magnam aut. 
+          En el 2025 ServiciosyTic será una empresa líder
+          posicionada en el mercado, reconocida por la
+          innovación y generación de empleos directos e
+          indirectos. 
         </p>
-        <Link href="/empresa" className="my-4 text-white text-lg bg-teal-500 p-2 rounded-xl text-center">Precione Si Deseas Conocer Mas Quienes Somos</Link>
+        <Link href="/empresa" className="my-4 text-white text-lg bg-teal-500 p-2 rounded-xl text-center">Presione aqui para obtener mas Informacion</Link>
       </div>
 
       <div className="mt-5 p-2">
-        <h1 className="text-2xl font-semibold text-blue-500">Acerca De Nosotros</h1>
+        <h1 className="text-2xl font-semibold text-blue-500">Acerca de Nosotros</h1>
         <p className="text-lg mt-4">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga nobis
-          ratione magnam voluptatem. Deserunt obcaecati sapiente reprehenderit
-          maxime necessitatibus, corporis deleniti adipisci quo, nisi fuga
-          ratione debitis! Maxime, ipsam numquam.
+          En ServiciosyTic nuestra historia está marcada por la pasión por la tecnología y el compromiso con la excelencia. Desde [Año de Fundación], hemos estado impulsando la transformación digital en [Tu Industria o Especialidad], ayudando a empresas como la tuya a prosperar en un mundo cada vez más impulsado por la tecnología.
         </p>
         <p className="text-lg mt-4">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit soluta
-          voluptatibus aspernatur modi architecto fugit fuga consectetur ratione
-          magnam aut. 
+          Estamos aquí para ayudarte a alcanzar nuevos niveles de eficiencia y éxito. Gracias por confiar en nosotros como tu proveedor de servicios tecnológicos de confianza. Esperamos trabajar contigo y ser parte de tu emocionante viaje hacia el éxito." 
         </p>
-        <Link href="/empresa" className="my-4 text-white text-lg bg-teal-500 p-2 rounded-xl text-center">Precione Si Deseas Conocer Mas Acerca De Nosotros</Link>
+        <Link href="/empresa" className="my-4 text-white text-lg bg-teal-500 p-2 rounded-xl text-center">Presione aqui para obtener mas Informacion</Link>
         
       </div>
     </div>

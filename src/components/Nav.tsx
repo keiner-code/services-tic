@@ -105,7 +105,7 @@ export function Nav() {
             </DropdownItem>
 
             <DropdownItem className="m-0 p-0">
-              <Link className="w-full h-full py-2 ml-2" href="/services">Distribucion de Dispositivos Tecnologicos</Link>
+              <Link className="w-full h-full py-2 ml-2" href="/services">Comercializacion de Productos Tecnologicos</Link>
             </DropdownItem>
 
             <DropdownItem className="m-0 p-0">
@@ -165,7 +165,7 @@ export function Nav() {
             </DropdownItem>
 
             <DropdownItem className="m-0 p-0">
-              <Link className="w-full h-full py-2 ml-2" href="/empresa">¿Porque elegirnos?</Link>
+              <Link className="w-full h-full py-2 ml-2" href="/empresa">¿Por que Escogernos?</Link>
             </DropdownItem>
 
           </DropdownMenu>
