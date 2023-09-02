@@ -38,3 +38,10 @@ export interface Service{
   phone: number,
   image: string
 }
+export interface Contact{
+  name: string,
+  identification: string,
+  phone: string,
+  email: string,
+  description: string
+}
