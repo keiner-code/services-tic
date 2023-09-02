@@ -38,10 +38,7 @@ export async function POST(req: NextApiRequest, res: NextApiResponse) {
           data.description,
         ]
       );
-        console.log(rows);
-        
-      //return NextResponse.json({rows[0] as ResultSetHeader});
-      return NextResponse.json(rows[0]);
+      return NextResponse.json(rows);
     } catch (error) {
       return NextResponse.json({
         message: error,

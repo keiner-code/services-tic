@@ -1,6 +1,8 @@
 import { FormEvent } from "react";
 import {useCreateContactMutation} from '@/services/contactApi'
 import { Contact } from "@/types";
+import { ResultSetHeader } from 'mysql2/promise';
+
 export default function Contact() {
   const [createContact,{isLoading, isError, error}] = useCreateContactMutation()
 
@@ -35,7 +37,7 @@ export default function Contact() {
         email,
         description,
       });
-      console.log('Contacto creado:', newContact);
+      console.log(newContact);
     } catch (error) {
       console.error('Error al crear el contacto:', error);
     }
