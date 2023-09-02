@@ -18,7 +18,7 @@ export default function CardInfoRight({ service }: Props) {
            {service.info}
           </p>
           <Link href="#">
-            <i className="fa-brands fa-whatsapp ml-3 text-3xl text-green-500"></i>
+            <i className="fa-brands fa-whatsapp ml-5 text-3xl text-green-500"></i>
           </Link>
         </span>
         <p className="text-lg text-gray-500 ml-5">
