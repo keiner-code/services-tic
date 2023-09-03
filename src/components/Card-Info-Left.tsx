@@ -1,5 +1,6 @@
 import { Link } from "@nextui-org/react";
 import type { Service } from "@/types";
+import Image from "next/image";
 type Props = {
   service: Service
 }
@@ -7,7 +8,9 @@ export default function CardInfoLeft({service}: Props) {
   return (
       <div className="flex mx-8 bg-blue-300 rounded-lg bg-opacity-20 shadow-lg mb-10 mt-10">
         <div className="mr-4">
-          <img
+          <Image
+            width={600}
+            height={600}
             className="rounded-s-lg"
             src={service.image}
             alt={service.image}

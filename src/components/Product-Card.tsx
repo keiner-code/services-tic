@@ -11,7 +11,7 @@ type Props = {
   product: Product
 }
 export default function ProductCard({product}: Props) {
-  const state = useSelector((value: RootState) => value.state.showModalProduct);
+  const state = useSelector((value: RootState) => value?.state.showModalProduct);
   
   const dispatch = useDispatch();
   const handlerSubmit = (id: number) => {

@@ -1,4 +1,5 @@
 import { Link } from "@nextui-org/react";
+import Image from "next/image";
 import type { Service } from "@/types";
 type Props = {
   service: Service;
@@ -26,7 +27,9 @@ export default function CardInfoRight({ service }: Props) {
         </p>
       </div>
       <div className="">
-        <img
+      <Image
+            width={600}
+            height={600}
           className="rounded-e-lg"
           src={service.image}
           alt={service.name}

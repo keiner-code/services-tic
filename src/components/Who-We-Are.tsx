@@ -1,3 +1,4 @@
+import Image  from 'next/image';
 import React from 'react';
 
 export default function WhoWeAre() { //quiene somos
@@ -55,7 +56,7 @@ export default function WhoWeAre() { //quiene somos
         <i className="fa-solid fa-lock text-9xl text-blue-400 w-3/4 text-center"></i>
       </div>
       </div>
-      <img className='rounded-lg' src="https://img.freepik.com/foto-gratis/recortar-empresarios-usando-laptop_1098-20091.jpg?w=360&t=st=1693533341~exp=1693533941~hmac=f4984b2fd816d9128e073b10db25f59cc8dbb53f5550333670cb98346dcca1a8" alt="img"/>
+      <Image width={300} height={900} className='rounded-lg' src="https://img.freepik.com/foto-gratis/recortar-empresarios-usando-laptop_1098-20091.jpg?w=360&t=st=1693533341~exp=1693533941~hmac=f4984b2fd816d9128e073b10db25f59cc8dbb53f5550333670cb98346dcca1a8" alt="img"/>
     </div>
   );
 }
