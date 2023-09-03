@@ -1,16 +1,16 @@
-import { NextResponse } from "next/server";
-import type { NextApiRequest, NextApiResponse } from "next";
+import { NextRequest, NextResponse } from "next/server";
 import { Contact } from "@/types";
 import { pool } from "@/database/config";
-import { ResultSetHeader } from 'mysql2/promise';
 
-export async function POST(req: NextApiRequest, res: NextApiResponse) {
+export async function POST(req: NextRequest, res: NextResponse) {
   if (req.method === "POST") {
     try {
       const readableStream = req.body;
       const textDecoder = new TextDecoder();
 
       let datos = "";
+
+      if(readableStream){
 
       const processStream = async () => {
         const reader = readableStream.getReader();
@@ -24,6 +24,7 @@ export async function POST(req: NextApiRequest, res: NextApiResponse) {
         }
         return datos;
       };
+
       const result = await processStream();
       const data: Contact = JSON.parse(result);
 
@@ -39,6 +40,13 @@ export async function POST(req: NextApiRequest, res: NextApiResponse) {
         ]
       );
       return NextResponse.json(rows);
+
+    }else{
+      return NextResponse.json({
+        message: "Error Al Cargar Los Datos"
+      })
+    }
+
     } catch (error) {
       return NextResponse.json({
         message: error,
