@@ -5,7 +5,7 @@ export const productApi = createApi({
   reducerPath: 'productApi',
   refetchOnFocus: true,
   baseQuery: fetchBaseQuery({
-      baseUrl: "http://localhost:3000/api/"
+    baseUrl: "https://services-oh0i8yrlk-keiner-code.vercel.app/api/",//baseUrl: "http://localhost:3000/api/"
   }),
   endpoints: (builder) => ({
     getAllProducts: builder.query<Product[], null>({
