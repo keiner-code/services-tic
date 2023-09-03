@@ -1,5 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import type { Contact } from "../types/index";
+import type {ResultSetHeader} from "@/types";
 
 export const contactApi = createApi({
   reducerPath: "contactApi",
@@ -9,7 +10,7 @@ export const contactApi = createApi({
   }),
   tagTypes: ["Post"],
   endpoints: (builder) => ({
-    createContact: builder.mutation<Contact, Contact>({
+    createContact: builder.mutation<ResultSetHeader, Contact>({
       query(body: Contact) {
         return {
           url: "contact",

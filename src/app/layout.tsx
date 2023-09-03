@@ -1,23 +1,13 @@
-"use client";
 import "./globals.css";
 import type { Metadata } from "next";
-import { NextUIProvider } from "@nextui-org/react";
-import { Nav } from "@/components/Nav";
-import Footer from "@/components/Footer";
-import { store } from "./store";
-import { Provider } from "react-redux";
-import { SessionProvider } from "next-auth/react";
+import Providers from "./providers";
 
 export const metadata: Metadata = {
   title: "Servicio TIC",
   description: "Ingenieria de calidad",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({children,}: {children: React.ReactNode}) {
   return (
     <html lang="es">
       <body>
@@ -28,15 +18,9 @@ export default function RootLayout({
           crossOrigin="anonymous"
           referrerPolicy="no-referrer"
         />
-        <SessionProvider>
-          <Provider store={store}>
-            <NextUIProvider>
-              <Nav />
-              {children}
-              <Footer />
-            </NextUIProvider>
-          </Provider>
-        </SessionProvider>
+          <Providers>
+            {children}
+          </Providers>
       </body>
     </html>
   );
