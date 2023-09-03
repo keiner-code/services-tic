@@ -31,7 +31,7 @@ export default function WhoWeAre() { //quiene somos
       <i className="fa-solid fa-people-group text-9xl text-blue-400 w-3/4 text-center mr-3"></i>
       <div>
           <h1 className='text-2xl font-semibold text-blue-500 mb-2'>¿Por Que Elegirnos?</h1>
-          <p className='text-lg text-gray-600'>En ServiciosyTic, no solo ofrecemos servicios y soluciones de TIC, sino que ofrecemos una asociación sólida y comprometida para impulsar tu éxito. Únete a nosotros y descubre cómo podemos llevar tu empresa al siguiente nivel en el mundo digital."</p>
+          <p className='text-lg text-gray-600'>En ServiciosyTic, no solo ofrecemos servicios y soluciones de TIC, sino que ofrecemos una asociación sólida y comprometida para impulsar tu éxito. Únete a nosotros y descubre cómo podemos llevar tu empresa al siguiente nivel en el mundo digital.</p>
           <p className='text-lg text-gray-600'>
           Aquí te ofrecemos algunas razones clave para elegirnos:
           </p>
