@@ -6,7 +6,7 @@ export const contactApi = createApi({
   reducerPath: "contactApi",
   refetchOnFocus: true,
   baseQuery: fetchBaseQuery({
-     baseUrl: "https://services-oh0i8yrlk-keiner-code.vercel.app/api",//baseUrl: "http://localhost:3000/api/",
+     baseUrl: process.env.NODE_ENV === 'production' ? "https://services-oh0i8yrlk-keiner-code.vercel.app/api/" : "http://localhost:3000/api/",
   }),
   tagTypes: ["Post"],
   endpoints: (builder) => ({

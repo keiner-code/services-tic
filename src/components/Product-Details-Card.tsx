@@ -21,8 +21,6 @@ export default function ProductDetailsCard() {
   const { isLoading, isFetching, data, error } = useGetProductByIdQuery({
     id: id.toString(),
   });
-  console.log(isLoading);
-  
 
   const dispatch = useDispatch();
   const [amount, setAmount] = useState<number>(1);

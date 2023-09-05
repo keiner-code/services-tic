@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-import { Contact } from "@/types";
-import { pool } from "@/database/config";
+import { Contact } from "../../../types";
+import { pool } from "../../../database/config";
 
 export async function POST(req: NextRequest, res: NextResponse) {
   if (req.method === "POST") {

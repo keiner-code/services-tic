@@ -11,5 +11,4 @@ export async function GET() {
     console.error("Error en la consulta de productos:", error);
     return NextResponse.json({ message: "Ha ocurrido un error al obtener los productos." }, { status: 500 });
   }
-  
 }
