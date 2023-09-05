@@ -38,9 +38,9 @@ export default function Contact() {
     },[message])
   
   return (
-    <div className="w-full px-12 flex">
+    <div className="w-full pl-8 md:px-12 flex flex-col md:flex-row">
       
-      <div className="w-3/4 float-left ">
+      <div className="w-3/4 float-left">
         <div className="float-left bg-blue-100 p-4 rounded-lg shadow-lg w-72 m-4">
           <i className="fa-solid fa-location-dot text-5xl text-center w-full text-teal-400"></i>
           <h1 className="font-semibold text-center mt-4">
@@ -73,7 +73,7 @@ export default function Contact() {
         </div>
       </div>
 
-      <div className="w-2/4 bg-blue-100 mt-4 rounded-md shadow-lg mb-4">
+      <div className="w-11/12 md:w-2/4 bg-blue-100 mt-4 rounded-md shadow-lg mb-4 ">
         <h1 className="text-center text-3xl font-semibold text-blue-400 mt-3 mb-4">
           Contáctenos
         </h1>

@@ -13,13 +13,13 @@ import {
   DropdownMenu,
   DropdownItem,
   Button,
+  Avatar,
 } from "@nextui-org/react";
 import Image from "next/image";
 import logo from "@/assets/images/logo.png";
 import { useState } from "react";
 import { signOut, useSession } from "next-auth/react";
 
-//hay que tiparlo
 type option = {
   menuService?: boolean;
   menuEmpresa?: boolean
@@ -36,8 +36,7 @@ export function Nav() {
   return (
     <Navbar
       onMenuOpenChange={setIsMenuOpen}
-      maxWidth="xl"
-      className="border-b-1 h-14 sm:shadow-sm mb-2"
+      className="border-b-1 h-14 sm:shadow-sm mb-2 w-full"
     >
       <NavbarContent>
         <NavbarMenuToggle
@@ -117,6 +116,7 @@ export function Nav() {
             </DropdownItem>
 
           </DropdownMenu>
+
         </Dropdown>
 
         <Dropdown>
@@ -162,6 +162,7 @@ export function Nav() {
             </DropdownItem>
 
           </DropdownMenu>
+
         </Dropdown>
 
         <NavbarItem>
@@ -179,24 +180,27 @@ export function Nav() {
       <NavbarContent justify="end">
         <NavbarItem className="lg:flex">
           <div className="flex items-center gap-4">
+
             {status === "unauthenticated" ? (
-              <div className="flex gap-2">
+              <div className="flex flex-col md:flex-row md:gap-2">
                 <Link
-                  className="border border-green-500 p-2 rounded-lg text-green-500"
+                  className="md:border md:border-green-500 md:md:p-2 md:rounded-lg text-green-500"
                   href="/login"
                 >
                   Iniciar Session
                 </Link>
                 <Link
-                  className="bg-blue-500 border border-blue-500 p-2 rounded-lg text-white"
-                  href="/login"
+                  className="md:bg-blue-500 md:border md:border-blue-500 md:md:p-2 md:rounded-lg md:text-white text-blue-500"
+                  href="/login" 
                 >
                   Registrarse
                 </Link>
               </div>
             ) : (
               <Dropdown placement="bottom-start">
-                <DropdownTrigger>
+                <DropdownTrigger className="">
+                  <div>
+                    <div className="hidden md:flex">
                   <User
                     as="button"
                     avatarProps={{
@@ -207,8 +211,14 @@ export function Nav() {
                     description='default'
                     name={`@${session?.user?.name}`}
                     />
+                    </div>
+                    <div className="md:hidden">
+                        <Avatar src={session?.user?.image as string} />
+                    </div>
                     {/* session?.user?.rol */}
+                    </div>
                 </DropdownTrigger>
+
 
                 <DropdownMenu aria-label="User Actions" variant="flat">
                   <DropdownItem key="profile" className="h-14 gap-2">
@@ -225,6 +235,7 @@ export function Nav() {
                     <button onClick={() => signOut()}> Cerrar Sesión</button>
                   </DropdownItem>
                 </DropdownMenu>
+
               </Dropdown>
             )}
           </div>
@@ -233,26 +244,17 @@ export function Nav() {
 
       <NavbarMenu className=" top-14">
         <NavbarMenuItem>
-          <Link color={"secondary"} className="w-full " href="#" size="lg">
+          <Link className="w-full bg-blue-300 bg-opacity-30 pl-2 rounded-lg mb-2" href="/" size="lg">
             Home
           </Link>
-          <Link color={"secondary"} className="w-full " href="#" size="lg">
-            Soporte Tecnico
+          <Link className="w-full bg-blue-300 bg-opacity-30 pl-2 rounded-lg mb-2" href="/services" size="lg">
+            Servicios
           </Link>
-          <Link color={"secondary"} className="w-full " href="#" size="lg">
-            Desarrollo Web
+          <Link className="w-full bg-blue-300 bg-opacity-30 pl-2 rounded-lg mb-2" href="/empresa" size="lg">
+            Empresa
           </Link>
-          <Link color={"secondary"} className="w-full " href="#" size="lg">
-            Asesoria
-          </Link>
-          <Link color={"secondary"} className="w-full " href="#" size="lg">
-            Big Data
-          </Link>
-          <Link color={"secondary"} className="w-full " href="#" size="lg">
-            Marketing
-          </Link>
-          <Link color={"secondary"} className="w-full " href="#" size="lg">
-            Big Data
+          <Link className="w-full bg-blue-300 bg-opacity-30 pl-2 rounded-lg mb-2" href="/contact" size="lg">
+            Contactar
           </Link>
         </NavbarMenuItem>
       </NavbarMenu>

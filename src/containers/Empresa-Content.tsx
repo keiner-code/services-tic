@@ -15,7 +15,7 @@ export default function EmpresaContent() {
       <div className="text-center my-10 border-b h-28 md:h-14 pt-2 font-medium text-blue-500 rounded-md shadow-xl shadow-blue-100 border--blue-100 text-2xl">
         Nuestros Pilares
       </div>
-      <MissionVision />
+      <MissionVision /> 
     </div>
   );
 }

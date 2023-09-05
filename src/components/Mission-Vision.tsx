@@ -2,8 +2,9 @@ import React from "react";
 
 export default function MissionVision() {
   return (
-    <div className="flex px-8">
-      <div className="w-1/3 bg-blue-500 bg-opacity-20 p-4 m-4 rounded-lg shadow-lg">
+    <div className="flex px-8 flex-col md:flex-row">
+
+      <div className="w-full md:w-1/3 bg-blue-500 bg-opacity-20 p-4 my-4 md:m-4 rounded-lg shadow-lg">
         <h1 className="text-blue-500 text-xl font-semibold">Vision</h1>
         <p className="text-gray-500">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi quod
@@ -13,7 +14,7 @@ export default function MissionVision() {
         </p>
       </div>
 
-      <div className="w-1/3 bg-blue-500 bg-opacity-20 p-4 m-4 rounded-lg shadow-lg">
+      <div className="w-full md:w-1/3 bg-blue-500 bg-opacity-20 p-4 my-4 md:m-4 rounded-lg shadow-lg">
         <h1 className="text-blue-500 text-xl font-semibold">Mision</h1>
         <p className="text-gray-500">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum ad
@@ -23,7 +24,7 @@ export default function MissionVision() {
         </p>
       </div>
 
-      <div className="w-1/3 bg-blue-500 bg-opacity-20 p-4 m-4 rounded-lg shadow-lg">
+      <div className="w-full md:w-1/3 bg-blue-500 bg-opacity-20 p-4 my-4 md:m-4 rounded-lg shadow-lg">
         <h1 className="text-blue-500 text-xl font-semibold">Valores Corporativos</h1>
         <ul className="text-gray-500">
           <li className="list-disc ml-8">Respeto</li>
