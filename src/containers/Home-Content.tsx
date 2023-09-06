@@ -69,7 +69,7 @@ export default function HomeContent() {
     <div className="md:w-full flex flex-col items-center">
       <Carousel />
       <div className="text-center my-10 border-b h-28 md:h-14 pt-2 font-medium text-blue-500 rounded-md shadow-xl shadow-blue-100 border--blue-100 text-2xl">
-        Comercializacion de Productos Tecnologicos
+        Comercializamos Productos Tecnologicos
       </div>
       <div className="float-left pl-8 md:ml-5 w-full">
         {data?.map((value) => (
