@@ -5,38 +5,6 @@ import type { Service } from "@/types";
 import Carousel from "@/components/Carousel";
 
 export default function ServiceContent() {
-  /* const service: Service[] = [
-    {
-      id: 1,
-      name: "Desarrollo Web",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo veroet dignissimos earum officiis! Corporis, rem reiciendis eligendi estiusto culpa delectus placeat velit reprehenderit deleniti mollitianesciunt, repudiandae accusamus?",
-      info: "Para Conocer Como Prestarte este Servicio Dirigete a nuestro",
-      phone: 304584754,
-      image:
-        "https://img.freepik.com/fotos-premium/codigo-programacion-desarrollo-web-o-desarrollo-aplicaciones-diseno-web-computadora-fondo-seo-3d_125322-458.jpg",
-    },
-    {
-      id: 2,
-      name: "Soporte Tecnico",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo veroet dignissimos earum officiis! Corporis, rem reiciendis eligendi estiusto culpa delectus placeat velit reprehenderit deleniti mollitianesciunt, repudiandae accusamus?",
-      info: "Para Conocer Como Prestarte este Servicio Dirigete a nuestro",
-      phone: 304584754,
-      image:
-        "https://blog.hubspot.es/hubfs/media/servicioalclienteadistancia.jpeg",
-    },
-    {
-      id: 3,
-      name: "Consultoria, Asesoria y Capacitacion",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo veroet dignissimos earum officiis! Corporis, rem reiciendis eligendi estiusto culpa delectus placeat velit reprehenderit deleniti mollitianesciunt, repudiandae accusamus?",
-      info: "Para Conocer Como Prestarte este Servicio Dirigete a nuestro",
-      phone: 304584754,
-      image:
-        "https://img.freepik.com/fotos-premium/codigo-programacion-desarrollo-web-o-desarrollo-aplicaciones-diseno-web-computadora-fondo-seo-3d_125322-458.jpg",
-    },
-  ]; */
   const service: Service[] = [
     {
       id: 1,

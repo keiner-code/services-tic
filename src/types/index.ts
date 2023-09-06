@@ -45,3 +45,13 @@ export interface Contact{
   email: string,
   description: string
 }
+
+export type ResultSetHeader = {
+  fieldCount: number,
+  affectedRows: number,
+  insertId: number,
+  info: string,
+  serverStatus: number,
+  warningStatus: number,
+  changedRows: number
+}

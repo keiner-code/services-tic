@@ -74,7 +74,7 @@ export default function ServiceCard(){
       />
       <CardFooter className="absolute bg-black/40 bottom-0 z-10 border-t-1 border-default-600 dark:border-default-100">
         <div className="flex flex-grow gap-2 items-center">
-          <img
+          <Image
             alt="Breathing app icon"
             className="rounded-full w-10 h-11 bg-black"
             src="https://img.freepik.com/foto-gratis/concepto-marca-solucion-estrategia-gestion-corporativa_53876-167088.jpg?w=740&t=st=1692301863~exp=1692302463~hmac=34b44c15e2b6e29c57c767112455b85dd37905db1ad521645af9b7915a8e76af"

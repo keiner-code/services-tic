@@ -66,15 +66,15 @@ export default function HomeContent() {
  
 
   return (
-    <div className="w-full flex flex-col items-center">
+    <div className="md:w-full flex flex-col items-center">
       <Carousel />
       <div className="text-center my-10 border-b h-28 md:h-14 pt-2 font-medium text-blue-500 rounded-md shadow-xl shadow-blue-100 border--blue-100 text-2xl">
         Comercializacion de Productos Tecnologicos
       </div>
-      <div className="float-left ml-5">
+      <div className="float-left pl-8 md:ml-5 w-full">
         {data?.map((value) => (
           <ProductCard product={value} key={value.id} />
-        ))}
+          ))}
       </div>
       <div className="text-center my-10 border-b h-28 md:h-14 pt-2 font-medium text-blue-500 rounded-md shadow-xl shadow-blue-100 border--blue-100 text-2xl">
          Nuestras Categorias
@@ -84,7 +84,7 @@ export default function HomeContent() {
         <div className="text-center my-10 border-b h-28 md:h-14 pt-2 font-medium text-blue-500 rounded-md shadow-xl shadow-blue-100 border--blue-100 text-2xl">
           Nuestros Servicios
         </div>
-        <div className="px-8 mb-4 float-left">
+        <div className="pl-10 md:px-8 mb-4 float-left">
           {service.map(item => (
             <HomeService key={item.id} service={item}/>
             ))}
@@ -93,7 +93,7 @@ export default function HomeContent() {
             Informacion General de Nuestra Empresa
         </div>
         <HomeEmpresa />
-      </div>
+      </div> 
     </div>
   );
 }
