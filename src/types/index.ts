@@ -36,6 +36,7 @@ export interface Service{
   description: string,
   info: string,
   phone: number,
+  icon: string,
   image: string
 }
 export interface Contact{
