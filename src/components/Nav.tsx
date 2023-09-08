@@ -212,7 +212,7 @@ export function Nav() {
                       src: `${session?.user?.image}`,
                     }}
                     className="transition-transform"
-                    description={`${session?.user?.rol}`}
+                    description="Gestion"
                     name={session?.user?.name}
                     />
                     </div>
