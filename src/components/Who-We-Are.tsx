@@ -48,11 +48,11 @@ export default function WhoWeAre() { //quiene somos
         <div className='text-center md:text-start mb-2 md:mb-0'>
           <h1 className='text-2xl font-semibold text-blue-500 mb-2'>Generacion de Valor</h1>
           <p className='text-lg text-gray-600'>En ServiciosyTic, nuestra misión es clara: generamos valor para tu negocio. Nos esforzamos constantemente por ser tu socio estratégico en el mundo de las tecnologías de la información y los servicios empresariales. Aquí tienes algunas formas en las que generamos valor:</p>
-          <p>Soluciones Innovadoras</p>
-          <p>Desarrollo de Soluciones de Software a la medida</p>
-          <p>Distribuimos equipos de tecnología pymes & grandes empresas </p>
-          <p>Realizamos envíos seguros a nivel nacional.</p>
-          <p>Asesorías y capacitaciones</p>
+          <p className='text-lg text-gray-600'>Soluciones Innovadoras</p>
+          <p className='text-lg text-gray-600'>Desarrollo de Soluciones de Software a la medida</p>
+          <p className='text-lg text-gray-600'>Distribuimos equipos de tecnología pymes & grandes empresas </p>
+          <p className='text-lg text-gray-600'>Realizamos envíos seguros a nivel nacional.</p>
+          <p className='text-lg text-gray-600'>Asesorías y capacitaciones</p>
         </div>
         <i className="fa-solid fa-lock text-9xl text-blue-400 w-3/4 text-center"></i>
       </div>

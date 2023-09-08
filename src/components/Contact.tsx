@@ -54,8 +54,8 @@ export default function Contact() {
         <div className="float-left bg-blue-100 p-4 rounded-lg shadow-lg w-72 m-4">
           <i className="fa-solid fa-phone text-5xl text-center w-full text-teal-400"></i>
           <h1 className="font-semibold text-center mt-4">NÚMERO DE TÉLEFONO</h1>
-          <p className="mt-3 text-center text-gray-500">Celular: 30294738</p>
-          <p className="text-center text-gray-500">Fijo: 3085743</p>
+          <p className="mt-3 text-center text-gray-500">Celular: 3058564125</p>
+          <p className="text-center text-gray-500">Fijo: 3058564125</p>
         </div>
 
         <div className="float-left bg-blue-100 p-4 rounded-lg shadow-lg w-72 m-4">
@@ -68,7 +68,7 @@ export default function Contact() {
         <div className="float-left bg-blue-100 p-4 rounded-lg shadow-lg w-72 m-4">
           <i className="fa-solid fa-envelopes-bulk text-5xl text-center w-full text-teal-400"></i>
           <h1 className="font-semibold text-center mt-4">CORREO ELECTRONICO</h1>
-          <p className="mt-3 text-center text-gray-500">hello@gmail.com</p>
+          <p className="mt-3 text-center text-gray-500">serviciosytic@gmail.com</p>
         </div>
       </div>
 

@@ -37,11 +37,11 @@ export default function Footer() {
         
       </div>
 
-      <div className="border-t-1 border-gray-600 flex flex-col md:flex-row justify-between text-xs w-full px-2 md:px-0 md:w-10/12 mt-5 mb-2 pt-1 text-gray-400">
-        <div className="text-center my-1 md:text-start md:my-0">Todos los derechos reservados | Copyright 2023 &copy;</div>
-        <div className="flex text-xs text-center md:text-start">
-          <li className="list-none mx-2">Informacion De La Compañia</li>|
-          <li className="list-none mx-2" >Politica De Privacidad</li>|
+      <div className="border-t-1 border-gray-600 flex justify-between text-xs w-10/12 mt-5 mb-2 pt-1 text-gray-400">
+        <div>Todos los derechos reservados | Copyright 2023 &copy;</div>
+        <div className="flex text-xs">
+          <li className="list-none mx-2">Informacion de La Compañia</li>|
+          <li className="list-none mx-2" >Politica de Privacidad</li>|
           <li className="list-none mx-2" >Terminos Y Condiciones</li>
         </div>
       </div>
