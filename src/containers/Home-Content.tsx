@@ -63,7 +63,6 @@ export default function HomeContent() {
         "https://img.freepik.com/foto-gratis/hombre-dibujando-bombilla-engranajes_1134-465.jpg?w=740&t=st=1693615661~exp=1693616261~hmac=1ed1a65adb42b4f1494bc7ff980238969fec51fcb3f84d10e08fa12741f6eb14",
     },
   ];
- 
 
   return (
     <div className="md:w-full flex flex-col items-center">

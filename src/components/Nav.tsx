@@ -17,7 +17,7 @@ import {
 } from "@nextui-org/react";
 import Image from "next/image";
 import logo from "@/assets/images/logo.png";
-import { useState } from "react";
+import { use, useState } from "react";
 import { signOut, useSession } from "next-auth/react";
 
 type option = {
@@ -32,7 +32,10 @@ export function Nav() {
     }
   );
   const { data: session, status } = useSession();
-
+    
+    //console.log(session?.user?.rol);
+    
+    
   return (
     <Navbar
       onMenuOpenChange={setIsMenuOpen}
@@ -182,18 +185,19 @@ export function Nav() {
           <div className="flex items-center gap-4">
 
             {status === "unauthenticated" ? (
-              <div className="flex flex-col md:flex-row md:gap-2">
+              <div className="flex flex-col md:flex-row md:gap-2 items-center">
                 <Link
                   className="md:border md:border-green-500 md:md:p-2 md:rounded-lg text-green-500"
                   href="/login"
                 >
+                  {/* <i className="fa-regular fa-user"></i> */}
                   Iniciar Session
                 </Link>
                 <Link
                   className="md:bg-blue-500 md:border md:border-blue-500 md:md:p-2 md:rounded-lg md:text-white text-blue-500"
-                  href="/login" 
+                  href="/register" 
                 >
-                  Registrarse
+                  Registrarse{/* <i className="fa-solid fa-user-plus"></i> */}
                 </Link>
               </div>
             ) : (
@@ -208,8 +212,8 @@ export function Nav() {
                       src: `${session?.user?.image}`,
                     }}
                     className="transition-transform"
-                    description='default'
-                    name={`@${session?.user?.name}`}
+                    description={`${session?.user?.rol}`}
+                    name={session?.user?.name}
                     />
                     </div>
                     <div className="md:hidden">

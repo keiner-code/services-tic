@@ -65,9 +65,10 @@ export default function ProductDetailsCard() {
           {data?.name}
         </ModalHeader>
         <ModalBody>
-          <div className="flex">
-            <div className="flex">
-              <div>
+          <div className="flex flex-col md:flex-row">
+
+            <div className="flex flex-col md:flex-row">
+              <div className="flex md:block">
                 <Image
                   className="w-20 mb-2 cursor-pointer"
                   src={data?.image1}
@@ -94,7 +95,7 @@ export default function ProductDetailsCard() {
                 />
               </div>
               <Image
-                className="w-[30.5rem] ml-2"
+                className="w-11/12 md:w-[30.5rem] ml-2"
                 src={`${image ? image : data?.image1}`}
                 alt="img1"
               />
@@ -168,6 +169,7 @@ export default function ProductDetailsCard() {
                 </div>
               </div>
             </div>
+
           </div>
         </ModalBody>
       </ModalContent>}
