@@ -2,7 +2,6 @@ import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { pool } from "@/database/config";
 import { RowDataPacket } from "mysql2";
-import type { User } from "@/types";
 
 const handler = NextAuth({
   providers: [
@@ -40,12 +39,13 @@ const handler = NextAuth({
       return token;
     },
     session({ session, token }) {
-      session.user = token.user as User;
-      return session;
+      session.user = token.user as any;
+      return session
     },
   },
   pages: {
     signIn: "/login",
+    signOut: "/register"
   },
 });
 

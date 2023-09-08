@@ -20,9 +20,8 @@ export interface TypeState {
 }
 
 export interface User{
-  id: number;
   name: string;
-  identification: number;
+  identification: string;
   image: string;
   rol: string;
   email: string;

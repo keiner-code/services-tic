@@ -26,7 +26,6 @@ export default function Contact() {
         description,
       });
       if(response.data.affectedRows){
-        console.log('entro');
         setMessage(true);
       }
     } catch (error) {

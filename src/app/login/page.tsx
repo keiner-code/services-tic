@@ -27,7 +27,7 @@ export default function Login() {
 
   return (
     <div className="flex justify-center py-14 bg-gray-100 h-screen">
-      <div className="w-3/12 absolute bg-zinc-200 rounded-3xl border-2 border-blue-200">
+      <div className="w-11/12 md:w-3/12 absolute bg-zinc-200 rounded-3xl border-2 border-blue-200">
         <div className="flex justify-center my-4">
           <Image
             className="w-24"
@@ -76,9 +76,10 @@ export default function Login() {
               </div>
             </div>
           </form>
+
           <div className="flex justify-between px-2 mb-8">
-            <Link href="" >Registrarse</Link>
-            <Link href="" >Regresar</Link>
+            <Link href="/register" >Registrarse</Link>
+            <Link href="/">Regresar</Link>
           </div>
         </div>
 
