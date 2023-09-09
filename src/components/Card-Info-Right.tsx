@@ -26,7 +26,7 @@ export default function CardInfoRight({ service }: Props) {
         </p>
         <span className="flex flex-col md:flex-row text-center md:text-start  items-center">
           <p className=" text-lg text-gray-500 ml-5">{service.info}</p>
-          <Link href="https://api.whatsapp.com/message/HJSWOBC7KST6O1?autoload=1&app_absent=0">
+          <Link href="https://api.whatsapp.com/message/HJSWOBC7KST6O1?autoload=1&app_absent=0" target="_blank">
             <i className="fa-brands fa-whatsapp ml-5 text-3xl text-green-500"></i>
           </Link>
         </span>
