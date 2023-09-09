@@ -17,12 +17,8 @@ export default function HomeEmpresa() {
       <div className="mt-5 p-2">
         <h1 className="text-2xl font-semibold text-blue-500 text-center md:text-start">Quienes Somos</h1>
         <p className="text-lg mt-4 text-center md:text-start">
-          Somos una empresa Colombiana, que brinda
-          eficientes servicios, desarrollamos sistemas de
-          información, asesorías y consultorías, contribuyendo
-          al mejoramiento continuo, alta calidad y
-          competitividad de nuestros aliados.
-          
+          ServiciosyTic es una empresa colombiana, encargada de desarrollar sistemas de tecnología, brindamos eficiente servicio en diferentes actividades de las tecnologías de información como desarrollo de software, Servicios técnicos especializados, asesorías, consultorías y distribución de equipos tecnológicos para Pymes. 
+          Contamos con personal altamente capacitado y queremos contribuir al crecimiento del sector empresarial en Colombia, generando valor con innovación y satisfacer las necesidades de nuestros clientes y colaboradores.
         </p>
         <Link href="/empresa" className="my-4 text-white text-lg bg-teal-500 p-2 rounded-xl text-center">Presione aqui para obtener mas Informacion</Link>
       </div>

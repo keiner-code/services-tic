@@ -10,19 +10,11 @@ export default function WhoWeAre() { //quiene somos
         <div className='text-center md:text-start mb-2 md:mb-0'>
           <h1 className='text-2xl font-semibold text-blue-500 mb-2'>Quienes Somos</h1>
           <p className='text-lg text-gray-600'>
-            Somos una empresa Colombiana, que brinda
-            eficientes servicios, desarrollamos sistemas de
-            información, asesorías y consultorías, contribuyendo
-            al mejoramiento continuo, alta calidad y
-            competitividad de nuestros aliados.
-            
+            ServiciosyTic es una empresa colombiana, encargada de desarrollar sistemas de tecnología, brindamos eficiente servicio en diferentes actividades de las tecnologías de información como desarrollo de software, Servicios técnicos especializados, asesorías, consultorías y distribución de equipos tecnológicos para Pymes. 
           </p>
 
           <p className='text-lg text-gray-600'>
-            En el 2025 ServiciosyTic será una empresa líder
-            posicionada en el mercado, reconocida por la
-            innovación y generación de empleos directos e
-            indirectos.
+            Contamos con personal altamente capacitado y queremos contribuir al crecimiento del sector empresarial en Colombia, generando valor con innovación y satisfacer las necesidades de nuestros clientes y colaboradores.
           </p>
 
         </div>

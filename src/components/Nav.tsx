@@ -49,10 +49,10 @@ export function Nav() {
 
         <NavbarBrand className="flex flex-col sm:items-start items-end">
           <div className="flex flex-col items-center">
-            <Image src={logo} alt="logo" width={40} height={40} />
-            <p className="font-bold text-xs hidden sm:inline-block">
+            <Image src={logo} alt="logo" width={80} height={80} />
+            {/*<p className="font-bold text-xs hidden sm:inline-block">
               SERVICIOS Y TIC
-            </p>
+  </p>*/}
           </div>
         </NavbarBrand>
       </NavbarContent>

@@ -20,11 +20,11 @@ export default function Footer() {
         <div className="w-full md:w-1/3 mt-4 md:mt-0">
           <h1 className="text-lg text-gray-400 ml-8 text-center md:text-start" >Nuestras Redes Sociales</h1>
           <div className="ml-5 text-sm mt-5 text-center md:text-start">
-          <Link href='https://www.facebook.com/SeviciosyTic/?_rdc=1&_rdr'><i className="fa-brands fa-facebook ml-3 text-3xl text-blue-500"></i></Link>
-          <Link href='https://api.whatsapp.com/message/HJSWOBC7KST6O1?autoload=1&app_absent=0'><i className="fa-brands fa-whatsapp ml-3 text-3xl text-green-500"></i></Link>
-          <Link href='https://www.instagram.com/serviciosytic/'><i className="fa-brands fa-instagram ml-3 text-3xl text-red-500"></i></Link>
-          {/*<Link href='#'><i className="fa-brands fa-twitter ml-3 text-3xl text-blue-500"></i></Link>
-          <Link href='#'><i className="fa-brands fa-youtube ml-3 text-3xl text-red-500"></i></Link>*/}
+          <Link href='https://www.facebook.com/SeviciosyTic/?_rdc=1&_rdr' target="_blank"><i className="fa-brands fa-facebook ml-3 text-3xl text-blue-500"></i></Link>
+          <Link href='https://api.whatsapp.com/message/HJSWOBC7KST6O1?autoload=1&app_absent=0' target="_blank"><i className="fa-brands fa-whatsapp ml-3 text-3xl text-green-500"></i></Link>
+          <Link href='https://www.instagram.com/serviciosytic/' target="_blank"><i className="fa-brands fa-instagram ml-3 text-3xl text-red-500"></i></Link>
+          <Link href='https://www.youtube.com/@serviciosytic8547' target="_blank"><i className="fa-brands fa-youtube ml-3 text-3xl text-red-500"></i></Link>
+          {/*<Link href='#'><i className="fa-brands fa-twitter ml-3 text-3xl text-blue-500"></i></Link>*/}
           </div>
         </div>
 
