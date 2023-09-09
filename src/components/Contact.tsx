@@ -45,24 +45,22 @@ export default function Contact() {
           <h1 className="font-semibold text-center mt-4">
             NUESTRA OFICINA PRINCIPAL
           </h1>
-          <p className="mt-3 text-center text-gray-500">
-            Calle 10C-23 # 94 Barrio Valle
-          </p>
-          <p className="text-center text-gray-500">Barranquilla-Colombia</p>
+          {/*<p className="mt-3 text-center text-gray-500">
+          </p>*/}
+          <p className="text-center text-gray-500">Barranquilla - Atlántico , Colombia</p>
         </div>
 
         <div className="float-left bg-blue-100 p-4 rounded-lg shadow-lg w-72 m-4">
           <i className="fa-solid fa-phone text-5xl text-center w-full text-teal-400"></i>
           <h1 className="font-semibold text-center mt-4">NÚMERO DE TÉLEFONO</h1>
           <p className="mt-3 text-center text-gray-500">Celular: 3058564125</p>
-          <p className="text-center text-gray-500">Fijo: 3058564125</p>
+          {/*<p className="text-center text-gray-500">Fijo: 3058564125</p>*/}
         </div>
 
         <div className="float-left bg-blue-100 p-4 rounded-lg shadow-lg w-72 m-4">
-          <i className="fa-solid fa-fax text-5xl text-center w-full text-teal-400"></i>
-          <h1 className="font-semibold text-center mt-4">FAX</h1>
-          <p className="mt-3 text-center text-gray-500">1-234-654-3563</p>
-          <p className="text-center text-gray-500">1-234-654-3563</p>
+          <i className="fa-brands fa-whatsapp text-5xl text-center w-full text-teal-400"></i>
+          <h1 className="font-semibold text-center mt-4">WHATSAPP</h1>
+          <p className="mt-3 text-center text-gray-500">3001963770</p>
         </div>
 
         <div className="float-left bg-blue-100 p-4 rounded-lg shadow-lg w-72 m-4">

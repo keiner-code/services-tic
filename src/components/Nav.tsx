@@ -46,10 +46,10 @@ export function Nav() {
 
         <NavbarBrand className="flex flex-col sm:items-start items-end">
           <div className="flex flex-col items-center">
-            <Image src={logo} alt="logo" width={40} height={40} />
-            <p className="font-bold text-xs hidden sm:inline-block">
+            <Image src={logo} alt="logo" width={80} height={80} />
+            {/*<p className="font-bold text-xs hidden sm:inline-block">
               SERVICIOS Y TIC
-            </p>
+  </p>*/}
           </div>
         </NavbarBrand>
       </NavbarContent>
@@ -76,9 +76,9 @@ export function Nav() {
               >
                 Servicios{" "}
                 {state.menuService ? (
-                  <i className="fa-solid fa-angle-down text-xs"></i>
-                ) : (
                   <i className="fa-solid fa-angle-up text-xs"></i>
+                ) : (
+                  <i className="fa-solid fa-angle-down text-xs"></i>
                 )}
               </Button>
             </DropdownTrigger>
@@ -140,9 +140,9 @@ export function Nav() {
               >
                 Empresa{" "}
                 {state.menuEmpresa ? (
-                  <i className="fa-solid fa-angle-down text-xs"></i>
-                ) : (
                   <i className="fa-solid fa-angle-up text-xs"></i>
+                ) : (
+                  <i className="fa-solid fa-angle-down text-xs"></i>
                 )}
               </Button>
             </DropdownTrigger>
@@ -202,7 +202,7 @@ export function Nav() {
                   className="md:border md:border-green-500 md:md:p-2 md:rounded-lg text-green-500"
                   href="/login"
                 >
-                  Iniciar Session
+                  Iniciar Sesion
                 </Link>
                 <Link
                   className="md:bg-blue-500 md:border md:border-blue-500 md:md:p-2 md:rounded-lg md:text-white text-blue-500"
