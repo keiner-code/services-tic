@@ -1,7 +1,7 @@
-import { User } from "@/types";
+import  User  from "../../../types";
 import { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
-import {pool} from '@/database/config'
+import {pool} from '../../../database/config'
 
 export async function POST(req: NextRequest, res: NextResponse) {
   try {

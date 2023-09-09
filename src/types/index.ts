@@ -19,7 +19,7 @@ export interface TypeState {
   idProduct: number
 }
 
-export interface User{
+export default interface User{
   name: string;
   identification: string;
   image: string;

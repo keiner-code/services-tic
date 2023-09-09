@@ -17,25 +17,22 @@ import {
 } from "@nextui-org/react";
 import Image from "next/image";
 import logo from "@/assets/images/logo.png";
-import { use, useState } from "react";
+import { useState } from "react";
 import { signOut, useSession } from "next-auth/react";
+import UserType from "@/types";
 
 type option = {
   menuService?: boolean;
-  menuEmpresa?: boolean
+  menuEmpresa?: boolean;
 };
 export function Nav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [state, dispatch] = useState<option>({
-      menuService: false,
-      menuEmpresa: false
-    }
-  );
-  const { data: session, status } = useSession();
-    
-    //console.log(session?.user?.rol);
-    
-    
+    menuService: false,
+    menuEmpresa: false,
+  });
+  const { data, status } = useSession();
+  const user = data?.user as UserType;
   return (
     <Navbar
       onMenuOpenChange={setIsMenuOpen}
@@ -95,31 +92,41 @@ export function Nav() {
             }}
           >
             <DropdownItem className="m-0 p-0">
-              <Link className="w-full h-full py-2 ml-2" href="/services">Desarrollo de Software</Link>
+              <Link className="w-full h-full py-2 ml-2" href="/services">
+                Desarrollo de Software
+              </Link>
             </DropdownItem>
 
             <DropdownItem className="m-0 p-0">
-              <Link className="w-full h-full py-2 ml-2" href="/services">Soporte Tecnico Especializado</Link>
+              <Link className="w-full h-full py-2 ml-2" href="/services">
+                Soporte Tecnico Especializado
+              </Link>
             </DropdownItem>
 
             <DropdownItem className="m-0 p-0">
-              <Link className="w-full h-full py-2 ml-2" href="/services">Comercializacion de Productos Tecnologicos</Link>
+              <Link className="w-full h-full py-2 ml-2" href="/services">
+                Comercializacion de Productos Tecnologicos
+              </Link>
             </DropdownItem>
 
             <DropdownItem className="m-0 p-0">
-              <Link className="w-full h-full py-2 ml-2" href="/services">Consulterias, Asesorias y Capacitaciones</Link>
+              <Link className="w-full h-full py-2 ml-2" href="/services">
+                Consulterias, Asesorias y Capacitaciones
+              </Link>
             </DropdownItem>
 
             <DropdownItem className="m-0 p-0">
-              <Link className="w-full h-full py-2 ml-2" href="/services">Redes y Telecomunicaciones</Link>
+              <Link className="w-full h-full py-2 ml-2" href="/services">
+                Redes y Telecomunicaciones
+              </Link>
             </DropdownItem>
 
             <DropdownItem className="m-0 p-0">
-              <Link className="w-full h-full py-2 ml-2" href="/services">Servicio de Inteligencia de Negocios</Link>
+              <Link className="w-full h-full py-2 ml-2" href="/services">
+                Servicio de Inteligencia de Negocios
+              </Link>
             </DropdownItem>
-
           </DropdownMenu>
-
         </Dropdown>
 
         <Dropdown>
@@ -149,23 +156,29 @@ export function Nav() {
             }}
           >
             <DropdownItem className="m-0 p-0">
-              <Link className="w-full h-full py-2 ml-2" href="/empresa">Quienes Somos</Link>
+              <Link className="w-full h-full py-2 ml-2" href="/empresa">
+                Quienes Somos
+              </Link>
             </DropdownItem>
 
             <DropdownItem className="m-0 p-0">
-              <Link className="w-full h-full py-2 ml-2" href="/empresa">Vision y Mision</Link>
+              <Link className="w-full h-full py-2 ml-2" href="/empresa">
+                Vision y Mision
+              </Link>
             </DropdownItem>
 
             <DropdownItem className="m-0 p-0">
-              <Link className="w-full h-full py-2 ml-2" href="/empresa">Valores Corporativos</Link>
+              <Link className="w-full h-full py-2 ml-2" href="/empresa">
+                Valores Corporativos
+              </Link>
             </DropdownItem>
 
             <DropdownItem className="m-0 p-0">
-              <Link className="w-full h-full py-2 ml-2" href="/empresa">¿Por que Escogernos?</Link>
+              <Link className="w-full h-full py-2 ml-2" href="/empresa">
+                ¿Por que Escogernos?
+              </Link>
             </DropdownItem>
-
           </DropdownMenu>
-
         </Dropdown>
 
         <NavbarItem>
@@ -183,7 +196,6 @@ export function Nav() {
       <NavbarContent justify="end">
         <NavbarItem className="lg:flex">
           <div className="flex items-center gap-4">
-
             {status === "unauthenticated" ? (
               <div className="flex flex-col md:flex-row md:gap-2 items-center">
                 <Link
@@ -194,9 +206,9 @@ export function Nav() {
                 </Link>
                 <Link
                   className="md:bg-blue-500 md:border md:border-blue-500 md:md:p-2 md:rounded-lg md:text-white text-blue-500"
-                  href="/register" 
+                  href="/register"
                 >
-                  Registrarse{/* <i className="fa-solid fa-user-plus"></i> */}
+                  Registrarse
                 </Link>
               </div>
             ) : (
@@ -204,32 +216,28 @@ export function Nav() {
                 <DropdownTrigger className="">
                   <div>
                     <div className="hidden md:flex">
-                  <User
-                    as="button"
-                    avatarProps={{
-                      isBordered: true,
-                      src: `${session?.user?.image}`,
-                    }}
-                    className="transition-transform"
-                    description="Gestion"
-                    name={session?.user?.name}
-                    />
+                      <User
+                        as="button"
+                        avatarProps={{
+                          isBordered: true,
+                          src: `${user?.image}`,
+                        }}
+                        className="transition-transform"
+                        description={user?.rol}
+                        name={user?.name}
+                      />
                     </div>
                     <div className="md:hidden">
-                        <Avatar src={session?.user?.image as string} />
+                      <Avatar src={user?.image} />
                     </div>
-                    {/* session?.user?.rol */}
-                    </div>
+                  </div>
                 </DropdownTrigger>
-
 
                 <DropdownMenu aria-label="User Actions" variant="flat">
                   <DropdownItem key="profile" className="h-14 gap-2">
-                    <p className="font-bold">{session?.user?.name}</p>
+                    <p className="font-bold">{user?.name}</p>
                   </DropdownItem>
-                  <DropdownItem key="system">
-                    {session?.user?.email}
-                  </DropdownItem>
+                  <DropdownItem key="system">{user?.email}</DropdownItem>
                   <DropdownItem key="configurations">Ver Perfil</DropdownItem>
                   <DropdownItem key="help_and_feedback">
                     Ayuda & Comentario
@@ -238,7 +246,6 @@ export function Nav() {
                     <button onClick={() => signOut()}> Cerrar Sesión</button>
                   </DropdownItem>
                 </DropdownMenu>
-
               </Dropdown>
             )}
           </div>
@@ -247,16 +254,32 @@ export function Nav() {
 
       <NavbarMenu className=" top-14">
         <NavbarMenuItem>
-          <Link className="w-full bg-blue-300 bg-opacity-30 pl-2 rounded-lg mb-2" href="/" size="lg">
+          <Link
+            className="w-full bg-blue-300 bg-opacity-30 pl-2 rounded-lg mb-2"
+            href="/"
+            size="lg"
+          >
             Home
           </Link>
-          <Link className="w-full bg-blue-300 bg-opacity-30 pl-2 rounded-lg mb-2" href="/services" size="lg">
+          <Link
+            className="w-full bg-blue-300 bg-opacity-30 pl-2 rounded-lg mb-2"
+            href="/services"
+            size="lg"
+          >
             Servicios
           </Link>
-          <Link className="w-full bg-blue-300 bg-opacity-30 pl-2 rounded-lg mb-2" href="/empresa" size="lg">
+          <Link
+            className="w-full bg-blue-300 bg-opacity-30 pl-2 rounded-lg mb-2"
+            href="/empresa"
+            size="lg"
+          >
             Empresa
           </Link>
-          <Link className="w-full bg-blue-300 bg-opacity-30 pl-2 rounded-lg mb-2" href="/contact" size="lg">
+          <Link
+            className="w-full bg-blue-300 bg-opacity-30 pl-2 rounded-lg mb-2"
+            href="/contact"
+            size="lg"
+          >
             Contactar
           </Link>
         </NavbarMenuItem>
