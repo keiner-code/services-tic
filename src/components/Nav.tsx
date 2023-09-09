@@ -20,6 +20,7 @@ import logo from "@/assets/images/logo.png";
 import { useState } from "react";
 import { signOut, useSession } from "next-auth/react";
 import UserType from "@/types";
+import { usePathname } from "next/navigation";
 
 type option = {
   menuService?: boolean;
@@ -31,8 +32,10 @@ export function Nav() {
     menuService: false,
     menuEmpresa: false,
   });
+  const currentRouter = usePathname();
   const { data, status } = useSession();
   const user = data?.user as UserType;
+
   return (
     <Navbar
       onMenuOpenChange={setIsMenuOpen}
@@ -47,9 +50,6 @@ export function Nav() {
         <NavbarBrand className="flex flex-col sm:items-start items-end">
           <div className="flex flex-col items-center">
             <Image src={logo} alt="logo" width={80} height={80} />
-            {/*<p className="font-bold text-xs hidden sm:inline-block">
-              SERVICIOS Y TIC
-  </p>*/}
           </div>
         </NavbarBrand>
       </NavbarContent>
@@ -59,7 +59,9 @@ export function Nav() {
           <Link
             color="foreground"
             href="/"
-            className="font-medium text-md ml-4"
+            className={`${
+              currentRouter === "/" ? "border-b-2 border-b-blue-400 p-2" : ""
+            } font-medium text-md ml-4`}
           >
             Home
           </Link>
@@ -70,7 +72,11 @@ export function Nav() {
             <DropdownTrigger>
               <Button
                 onClick={() => dispatch({ menuService: !state.menuService })}
-                className="p-0 bg-transparent data-[hover=true]:bg-transparent font-medium text-md ml-4"
+                className={`${
+                  currentRouter === "/services"
+                    ? "border-b-2 border-b-blue-400 p-2 rounded-none"
+                    : ""
+                } p-0 bg-transparent data-[hover=true]:bg-transparent font-medium text-md ml-4`}
                 radius="sm"
                 variant="light"
               >
@@ -134,7 +140,11 @@ export function Nav() {
             <DropdownTrigger>
               <Button
                 onClick={() => dispatch({ menuEmpresa: !state.menuEmpresa })}
-                className="p-0 bg-transparent data-[hover=true]:bg-transparent font-medium text-md ml-4"
+                className={`${
+                  currentRouter === "/empresa"
+                    ? "border-b-2 border-b-blue-400 p-2 rounded-none"
+                    : ""
+                } p-0 bg-transparent data-[hover=true]:bg-transparent font-medium text-md ml-4`}
                 radius="sm"
                 variant="light"
               >
@@ -186,7 +196,11 @@ export function Nav() {
             color="foreground"
             href="/contact"
             aria-current="page"
-            className="font-medium text-md ml-4"
+            className={`${
+              currentRouter === "/contact"
+                ? "border-b-2 border-b-blue-400 p-2 rounded-none"
+                : ""
+            } font-medium text-md ml-4`}
           >
             Contactar
           </Link>

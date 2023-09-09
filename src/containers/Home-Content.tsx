@@ -72,20 +72,20 @@ export default function HomeContent() {
   return (
     <div className="md:w-full flex flex-col items-center">
       <Carousel />
-      <div className="text-center my-10 border-b h-28 md:h-14 pt-2 font-medium text-blue-500 rounded-md shadow-xl shadow-blue-100 border--blue-100 text-2xl">
+      <div className="text-center my-10 border-b pb-2 md:h-14 pt-2 font-medium text-blue-500 rounded-md shadow-xl shadow-blue-100 border--blue-100 text-2xl">
         Comercializamos Productos Tecnologicos
       </div>
-      <div className="float-left pl-8 md:ml-5 w-full">
+      <div className="float-left pl-8 md:pl-0 md:ml-5 w-full md:w-auto">
         {data?.map((value) => (
           <ProductCard product={value} key={value.id} />
           ))}
       </div>
-      <div className="text-center my-10 border-b h-28 md:h-14 pt-2 font-medium text-blue-500 rounded-md shadow-xl shadow-blue-100 border--blue-100 text-2xl">
+      <div className="text-center my-10 border-b pb-2 w-full md:w-3/12 md:h-14 pt-2 font-medium text-blue-500 rounded-md shadow-xl shadow-blue-100 border--blue-100 text-2xl">
          Nuestras Categorias
       </div>
       <ServiceCard />
       <div className="flex flex-col items-center">
-        <div className="text-center my-10 border-b h-28 md:h-14 pt-2 font-medium text-blue-500 rounded-md shadow-xl shadow-blue-100 border--blue-100 text-2xl">
+        <div className="text-center my-10 border-b w-full md:w-3/12 pb-2 md:h-14 pt-2 font-medium text-blue-500 rounded-md shadow-xl shadow-blue-100 border--blue-100 text-2xl">
           Nuestros Servicios
         </div>
         <div className="pl-10 md:px-8 mb-4 float-left">
@@ -93,7 +93,7 @@ export default function HomeContent() {
             <HomeService key={item.id} service={item}/>
             ))}
         </div>
-        <div className="text-center my-10 border-b h-28 md:h-14 pt-2 font-medium text-blue-500 rounded-md shadow-xl shadow-blue-100 border--blue-100 text-2xl">
+        <div className="text-center my-10 border-b pb-2 md:h-14 pt-2 font-medium text-blue-500 rounded-md shadow-xl shadow-blue-100 border--blue-100 text-2xl">
             Informacion General de Nuestra Empresa
         </div>
         <HomeEmpresa />

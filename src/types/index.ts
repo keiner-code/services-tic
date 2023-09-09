@@ -14,6 +14,21 @@ export interface Product {
     image4: string
 }
 
+export interface ProductDetail {
+  price: number,
+  name: string,
+  image1: string,
+  image2: string,
+  image3: string,
+  image4: string
+  description: string,
+  processor: string,
+  ram: string,
+  storage: string,
+  display: string,
+
+}
+
 export interface TypeState {
   showModalProduct: boolean,
   idProduct: number
