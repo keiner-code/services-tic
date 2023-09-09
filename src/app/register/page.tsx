@@ -2,7 +2,8 @@
 import { Image } from "@nextui-org/react";
 import Link from "next/link";
 import { FormEvent, useEffect, useState } from "react";
-import type { ResultSetHeader, User } from "@/types";
+import type { ResultSetHeader} from "@/types";
+import  User from "@/types";
 import { useRouter } from "next/navigation";
 import {useCreateUserMutation} from '@/services/usersApi';
 import CardMessage from "@/components/Card-Message";
