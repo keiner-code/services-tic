@@ -85,7 +85,7 @@ export default function Contact() {
             />
             <input
               type="number"
-              placeholder="Ingrese Su Identificacion"
+              placeholder="Ingrese su Identificacion"
               className="border-none outline-none rounded-lg"
               name="identification"
             />
