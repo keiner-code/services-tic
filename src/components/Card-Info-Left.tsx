@@ -28,7 +28,7 @@ export default function CardInfoLeft({service}: Props) {
             <p className=" text-lg text-gray-500">
               {service.info}
             </p>
-            <Link href="#">
+            <Link href="https://api.whatsapp.com/message/HJSWOBC7KST6O1?autoload=1&app_absent=0">
               <i className="fa-brands fa-whatsapp ml-4 text-3xl text-green-500"></i>
             </Link>
           </span>
