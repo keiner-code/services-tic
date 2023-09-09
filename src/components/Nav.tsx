@@ -49,10 +49,7 @@ export function Nav() {
 
         <NavbarBrand className="flex flex-col sm:items-start items-end">
           <div className="flex flex-col items-center">
-            <Link href="/" > <Image  src={logo} alt="logo" width={70}  />
-            {/*<p className="font-bold text-xs hidden sm:inline-block">
-              SERVICIOS Y TIC
-  </p>*/}</Link>
+            <Link href="/"><Image src={logo} alt="logo" width={70} /></Link>
           </div>
         </NavbarBrand>
       </NavbarContent>

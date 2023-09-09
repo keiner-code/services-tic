@@ -24,7 +24,6 @@ export default function Footer() {
           <Link href='https://api.whatsapp.com/message/HJSWOBC7KST6O1?autoload=1&app_absent=0' target="_blank"><i className="fa-brands fa-whatsapp ml-3 text-3xl text-green-500"></i></Link>
           <Link href='https://www.instagram.com/serviciosytic/' target="_blank"><i className="fa-brands fa-instagram ml-3 text-3xl text-red-500"></i></Link>
           <Link href='https://www.youtube.com/@serviciosytic8547' target="_blank"><i className="fa-brands fa-youtube ml-3 text-3xl text-red-500"></i></Link>
-          {/*<Link href='#'><i className="fa-brands fa-twitter ml-3 text-3xl text-blue-500"></i></Link>*/}
           </div>
         </div>
 

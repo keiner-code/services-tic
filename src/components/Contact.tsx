@@ -45,8 +45,6 @@ export default function Contact() {
           <h1 className="font-semibold text-center mt-4">
             NUESTRA OFICINA PRINCIPAL
           </h1>
-          {/*<p className="mt-3 text-center text-gray-500">
-          </p>*/}
           <p className="text-center text-gray-500">Barranquilla - Atlántico , Colombia</p>
         </div>
 
@@ -54,7 +52,6 @@ export default function Contact() {
           <i className="fa-solid fa-phone text-5xl text-center w-full text-teal-400"></i>
           <h1 className="font-semibold text-center mt-4">NÚMERO DE TÉLEFONO</h1>
           <p className="mt-3 text-center text-gray-500">Celular: 3058564125</p>
-          {/*<p className="text-center text-gray-500">Fijo: 3058564125</p>*/}
         </div>
 
         <div className="float-left bg-blue-100 p-4 rounded-lg shadow-lg w-72 m-4">
