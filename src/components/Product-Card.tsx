@@ -17,6 +17,7 @@ export default function ProductCard({ product }: Props) {
   );
 
   const dispatch = useDispatch();
+
   const handlerSubmit = (id: number) => {
     dispatch(getIdProduct(id));
     dispatch(showModalProduct());
@@ -45,7 +46,7 @@ export default function ProductCard({ product }: Props) {
       <Link className="absolute z-10 top-6 right-4 mr-2 mb-4" href="/contact">
         <i className="fa-brands fa-whatsapp text-3xl text-green-500"></i>
       </Link>
-      {state && <ProductDetailsCard />}
+     { state && <ProductDetailsCard/>}
     </div>
   );
 }
