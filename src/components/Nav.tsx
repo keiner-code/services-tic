@@ -207,7 +207,7 @@ export function Nav() {
         </NavbarItem>
       </NavbarContent>
 
-      <NavbarContent justify="end">
+      {/* <NavbarContent justify="end">
         <NavbarItem className="lg:flex">
           <div className="flex items-center gap-4">
             {status === "unauthenticated" ? (
@@ -264,7 +264,7 @@ export function Nav() {
             )}
           </div>
         </NavbarItem>
-      </NavbarContent>
+      </NavbarContent> */}
 
       <NavbarMenu className=" top-14">
         <NavbarMenuItem>

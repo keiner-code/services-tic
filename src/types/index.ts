@@ -7,7 +7,7 @@ export interface Product {
     discount: number,
     id_image: number,
     description: string,
-    state: number,
+    state: string,
     image1: string,
     image2: string,
     image3: string,
