@@ -18,7 +18,7 @@ import {
 import Image from "next/image";
 import logo from "@/assets/images/logo.png";
 import { useState } from "react";
-import { signOut, useSession } from "next-auth/react";
+import { useSession } from "next-auth/react";
 import UserType from "@/types";
 import { usePathname } from "next/navigation";
 
@@ -205,6 +205,22 @@ export function Nav() {
             Contactar
           </Link>
         </NavbarItem>
+
+        {/* <NavbarItem>
+          <Link
+            color="foreground"
+            href="/business"
+            aria-current="page"
+            className={`${
+              currentRouter === "/business"
+                ? "border-b-2 border-b-blue-400 p-2 rounded-none"
+                : ""
+            } font-medium text-md ml-4`}
+          >
+            Inteligencia de negocios
+          </Link>
+        </NavbarItem> */}
+
       </NavbarContent>
 
       {/* <NavbarContent justify="end">
