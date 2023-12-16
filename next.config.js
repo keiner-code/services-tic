@@ -5,9 +5,19 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'img.freepik.com',
+      },
+      {
+        protocol: 'https',
         hostname: 'twitter.com',
+      },
+      {
+        protocol: 'https',
         hostname: '**.freepik.com'
       },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com'
+      }
     ],
   },
 }

@@ -206,7 +206,7 @@ export function Nav() {
           </Link>
         </NavbarItem>
 
-        {/* <NavbarItem>
+        <NavbarItem>
           <Link
             color="foreground"
             href="/business"
@@ -219,7 +219,7 @@ export function Nav() {
           >
             Inteligencia de negocios
           </Link>
-        </NavbarItem> */}
+        </NavbarItem>
 
       </NavbarContent>
 
@@ -311,6 +311,13 @@ export function Nav() {
             size="lg"
           >
             Contactar
+          </Link>
+          <Link
+            className="w-full bg-blue-300 bg-opacity-30 pl-2 rounded-lg mb-2"
+            href="/business"
+            size="lg"
+          >
+            Inteligencia de negocios
           </Link>
         </NavbarMenuItem>
       </NavbarMenu>
