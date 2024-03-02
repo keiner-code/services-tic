@@ -15,6 +15,7 @@ export default function Images() {
 
   return (
     <Dashboard>
+      <>
       {state.showModalImagen && <ModalCreateImagen />}
       <div className="w-full flex justify-end">
         <button
@@ -52,6 +53,7 @@ export default function Images() {
           </Table.Body>
         </Table>
       </div>
+      </>
     </Dashboard>
   );
 }

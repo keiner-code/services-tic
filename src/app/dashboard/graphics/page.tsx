@@ -2,6 +2,6 @@ import Dashboard from "../main/page";
 
 export default function Graphics(){
     return(
-            <Dashboard>Graphics</Dashboard>
+            <Dashboard><p>Graphics</p></Dashboard>
     )
 }

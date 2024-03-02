@@ -30,6 +30,7 @@ export default function Products(){
 
     return(
         <Dashboard>
+          <>
       {state.showModalProduct && <ModalProduct />}
       <div className="flex w-full justify-end pb-2">
       <button
@@ -65,6 +66,7 @@ export default function Products(){
         </Table.Body>
       </Table>
       </div>
+      </>
     </Dashboard>
     )
 }
