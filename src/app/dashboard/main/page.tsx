@@ -1,9 +1,9 @@
 "use client";
 import { usePathname, useRouter } from "next/navigation";
-import Graphics from "./graphics/page";
+import Graphics from "../graphics/page";
 import Aside from "@/components/dashboard/Aside";
 import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../store";
+import { RootState } from "../../store";
 import { useEffect } from "react";
 import { showAlert } from "@/features/state/stateSlice";
 import Alert from "@/components/Alert";

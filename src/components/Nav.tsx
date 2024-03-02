@@ -240,10 +240,10 @@ export function Nav() {
           <NavbarItem>
           <Link
             color="foreground"
-            href="/dashboard"
+            href="/dashboard/main"
             aria-current="page"
             className={`${
-              currentRouter === "/dashboard" || 
+              currentRouter === "/dashboard/main" || 
               currentRouter === "/dashboard/users" ||
               currentRouter === "/dashboard/products" ||
               currentRouter === "/dashboard/images"

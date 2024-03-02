@@ -1,5 +1,5 @@
 "use client";
-import Dashboard from "../page";
+import Dashboard from "../main/page";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/app/store";
 import { Spinner, Table } from "flowbite-react";

@@ -1,5 +1,5 @@
 "use client";
-import Dashboard from "../page";
+import Dashboard from "../main/page";
 import { useGetAllUserQuery } from "@/services/usersApi";
 import { Spinner } from "flowbite-react";
 import TableUser from "@/components/dashboard/TableUser";
