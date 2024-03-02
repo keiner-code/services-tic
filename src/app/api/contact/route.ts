@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Contact } from "../../../types";
-import { pool } from "../../../database/config";
 
 export async function POST(req: NextRequest, res: NextResponse) {
   if (req.method === "POST") {
@@ -28,7 +27,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
       const result = await processStream();
       const data: Contact = JSON.parse(result);
 
-      const connection = await pool.getConnection();
+      /* const connection = await pool.getConnection();
       const [rows] = await connection.query(
         "INSERT INTO contacts (name,identification,phone,email,description) VALUES (?,?,?,?,?)",
         [
@@ -38,8 +37,8 @@ export async function POST(req: NextRequest, res: NextResponse) {
           data.email,
           data.description,
         ]
-      );
-      return NextResponse.json(rows);
+      ); */
+      return NextResponse.json({message: 'en construccion'});
 
     }else{
       return NextResponse.json({
