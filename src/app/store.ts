@@ -4,6 +4,7 @@ import { productApi } from "@/services/productApi";
 import { usersApi } from "@/services/usersApi";
 import { contactApi } from "@/services/contactApi";
 import { setupListeners } from "@reduxjs/toolkit/dist/query";
+import { imagenApi } from "@/services/imagenApi";
 
 export const store = configureStore({
   reducer: {
@@ -11,6 +12,7 @@ export const store = configureStore({
     [productApi.reducerPath]: productApi.reducer,
     [contactApi.reducerPath]: contactApi.reducer,
     [usersApi.reducerPath]: usersApi.reducer,
+    [imagenApi.reducerPath]: imagenApi.reducer,
   },
   devTools: process.env.NODE_ENV !== "production",
   middleware: (getDefaultMiddleware) =>
@@ -18,6 +20,7 @@ export const store = configureStore({
       productApi.middleware,
       contactApi.middleware,
       usersApi.middleware,
+      imagenApi.middleware,
     ]),
 });
 

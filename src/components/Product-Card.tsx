@@ -4,12 +4,12 @@ import ProductDetailsCard from "./Product-Details-Card";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/app/store";
 import { showModalProduct } from "@/features/state/stateSlice";
-import { getIdProduct } from "@/features/state/stateSlice";
-import { Product } from "@/types";
+import { dataProductList } from "@/features/state/stateSlice";
+import { ListProduct, Product } from "@/types";
 import Link from "next/link";
 
 type Props = {
-  product: Product;
+  product: ListProduct;
 };
 export default function ProductCard({ product }: Props) {
   const state = useSelector(
@@ -18,14 +18,14 @@ export default function ProductCard({ product }: Props) {
 
   const dispatch = useDispatch();
 
-  const handlerSubmit = (id: number) => {
-    dispatch(getIdProduct(id));
+  const handlerSubmit = (product: ListProduct) => {
+    dispatch(dataProductList(product));
     dispatch(showModalProduct());
   };
 
   return (
     <div className="float-left relative">
-      <div onClick={() => handlerSubmit(product.id)}>
+      <div onClick={() => handlerSubmit(product)}>
         <Card className="pt-4 border m-4 w-72  shadow-lg cursor-pointer">
           <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
             <p className="text-tiny uppercase font-bold">{product.name}</p>

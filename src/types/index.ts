@@ -1,18 +1,30 @@
 export interface Product {
-    id: number,
+    product_id: number,
     name: string,
     maker: string,
     amount: number,
     price: number,
     discount: number,
-    id_image: number,
     description: string,
-    state: string,
+    state: boolean
+    image_id: number,
+};
+export interface ListProduct{
+    product_id: number,
+    name: string,
+    maker: string,
+    amount: number,
+    price: number,
+    discount: number,
+    description: string,
+    state: boolean
+    image_id: number,
     image1: string,
     image2: string,
     image3: string,
     image4: string
 }
+export type CreateProduct = Omit<Product, 'product_id'>;
 
 export interface ProductDetail {
   price: number,
@@ -27,23 +39,34 @@ export interface ProductDetail {
   storage: string,
   display: string,
 
-}
-
+};
+export interface User{
+  user_id?: number;
+  name?: string;
+  identification?: string;
+  image?: string;
+  rol?: string;
+  email?: string;
+  password?: string;
+  state?: boolean;
+};
 export interface TypeState {
   showModalProduct: boolean,
-  idProduct: number
-}
-
-export default interface User{
-  name: string;
-  identification: string;
-  image: string;
-  rol: string;
-  email: string;
-  password: string;
-  state: string;
+  idProduct: number,
+  userUpdate: User
+  alert: Alert,
+  showModal: boolean,
+  showModalImagen: boolean,
+  imagenUpdate: ImagenType,
+  productUpdate: Product,
+  listProduct: ListProduct
 };
-
+export interface Alert {
+  showAlert: boolean,
+  text: string,
+  bg: string
+}
+export type CreateUser = Omit<User, 'user_id'>;
 export interface Service{
   id: number,
   name: string,
@@ -60,7 +83,6 @@ export interface Contact{
   email: string,
   description: string
 }
-
 export type ResultSetHeader = {
   fieldCount: number,
   affectedRows: number,
@@ -70,3 +92,12 @@ export type ResultSetHeader = {
   warningStatus: number,
   changedRows: number
 }
+
+export interface ImagenType{
+  image_id: number,
+  image1: string,
+  image2: string,
+  image3: string,
+  image4: string
+}
+export type CreateImagen = Omit<ImagenType, 'image_id'>;

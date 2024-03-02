@@ -17,6 +17,14 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'images.unsplash.com'
+      },
+      {
+        protocol: 'https',
+        hostname: 'acortar.link'
+      },
+      {
+        protocol: 'https',
+        hostname: "n9.cl" 
       }
     ],
   },

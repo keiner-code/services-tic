@@ -14,6 +14,7 @@ export default function CardInfoLeft({service}: Props) {
             className="rounded-s-lg"
             src={service.image}
             alt={service.image}
+            blurDataURL={service.image}
           />
         </div>
 

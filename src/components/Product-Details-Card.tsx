@@ -5,30 +5,22 @@ import {
   ModalBody,
   Button,
   Image,
-  Link
+  Link,
 } from "@nextui-org/react";
 import type { RootState } from "@/app/store";
 import { showModalProduct } from "@/features/state/stateSlice";
 import { useSelector, useDispatch } from "react-redux";
-import { useEffect, useState } from "react";
-import { useGetProductByIdQuery } from "@/services/productApi";
+import { useState } from "react";
 
 export default function ProductDetailsCard() {
   const dispatch = useDispatch();
   const [total, setTotal] = useState<number>(0);
   const [amount, setAmount] = useState<number>(1);
   const [image, setImage] = useState<string | undefined>("");
-  const id = useSelector((value: RootState) => value.state.idProduct);
-  const state = useSelector((value: RootState) => value.state.showModalProduct);
-  const {data} = useGetProductByIdQuery({id: id.toString()});
-
-  useEffect(() => {
-    const res = data?.price as number;
-    setTotal(res);
-  }, [data]);
+  const state = useSelector((value: RootState) => value.state);
 
   const handlerAmount = (value: boolean) => {
-    const res = data?.price as number;
+    const res = state.listProduct.price as number;
     if (value) {
       setTotal(total + res);
       setAmount(amount + 1);
@@ -43,7 +35,7 @@ export default function ProductDetailsCard() {
     <Modal
       size="3xl"
       backdrop="opaque"
-      isOpen={state}
+      isOpen={state.showModalProduct}
       onOpenChange={() => dispatch(showModalProduct())}
       radius="lg"
       placement="center"
@@ -56,7 +48,7 @@ export default function ProductDetailsCard() {
     >
       <ModalContent className="h-screen md:h-auto overflow-scroll md:overflow-auto">
         <ModalHeader className="flex flex-col gap-1 text-black">
-          {data?.name}
+          {state.listProduct.name}
         </ModalHeader>
         <ModalBody>
           <div className="flex flex-col md:flex-row">
@@ -64,44 +56,45 @@ export default function ProductDetailsCard() {
               <div className="flex md:block">
                 <Image
                   className="w-20 mb-2 cursor-pointer"
-                  src={data?.image1}
-                  onMouseOver={() => setImage(data?.image1)}
+                  src={state.listProduct.image1}
+                  onMouseOver={() => setImage(state.listProduct.image1)}
                   alt="img1"
                 />
                 <Image
                   className="w-20 mb-2 cursor-pointer"
-                  src={data?.image2}
+                  src={state.listProduct.image2}
                   alt="img2"
-                  onMouseOver={() => setImage(data?.image2)}
+                  onMouseOver={() => setImage(state.listProduct.image2)}
                 />
                 <Image
                   className="w-20 mb-2 cursor-pointer"
-                  src={data?.image3}
-                  onMouseOver={() => setImage(data?.image3)}
+                  src={state.listProduct.image3}
+                  onMouseOver={() => setImage(state.listProduct.image3)}
                   alt="img3"
                 />
                 <Image
                   className="w-20 mb-2 cursor-pointer"
-                  src={data?.image4}
-                  onMouseOver={() => setImage(data?.image4)}
+                  src={state.listProduct.image4}
+                  onMouseOver={() => setImage(state.listProduct.image4)}
                   alt="img4"
                 />
               </div>
-
               <Image
                 className="w-11/12 md:w-[30.5rem] ml-2"
-                src={`${image ? image : data?.image1}`}
+                src={`${image ? image : state.listProduct.image1}`}
                 alt="img1"
               />
             </div>
 
             <div className="ml-4">
               <h1 className="text-lg md:text-xl  text-black w-full text-start">
-                {data?.description}
+                {state.listProduct.description}
               </h1>
               <p className="text-black font-semibold mt-2">
                 Precio: ${" "}
-                {new Intl.NumberFormat().format(data?.price as number)}
+                {new Intl.NumberFormat().format(
+                  state.listProduct.price as number
+                )}
               </p>
               <div className="flex mt-4">
                 <p className="text-md md:text-lg text-black pt-0.5">
@@ -137,7 +130,7 @@ export default function ProductDetailsCard() {
                 <p className="text-black text-lg font-semibold">
                   ${" "}
                   {new Intl.NumberFormat().format(
-                    total ? total : (data?.price as number)
+                    total ? total : (state.listProduct.price as number)
                   )}
                 </p>
                 <Link
@@ -156,13 +149,12 @@ export default function ProductDetailsCard() {
                   Comprar
                 </Link>
               </div>
-
               <div>
                 <h1 className="text-gray-500 mb-1.5">Caracteristicas</h1>
-                <p>{data?.processor}</p>
-                <p>{data?.ram}</p>
-                <p>{data?.storage}</p>
-                <p>{data?.display}</p>
+                <p>Procesador: ?</p>
+                <p>Memoria Ram: ?</p>
+                <p>Almacenamiento: ?</p>
+                <p>Pantalla: ?</p>
               </div>
             </div>
           </div>

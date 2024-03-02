@@ -1,5 +1,5 @@
 "use client";
-import {Image, Link } from "@nextui-org/react";
+import { Image, Link } from "@nextui-org/react";
 import { signIn } from "next-auth/react";
 import { FormEvent, useState } from "react";
 import { useRouter } from "next/navigation";
@@ -11,19 +11,16 @@ export default function Login() {
 
   const handlerSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    
+
     const formData = new FormData(e.currentTarget);
-      const res = await signIn('credentials',{
-        email: formData.get('email'),
-        password: formData.get('password'),
-        redirect: false
-      });
-
-      if(res?.error) return console.log("error");
-      if(res?.ok) return route.push("/")
-
-  }
-
+    const res = await signIn("credentials", {
+      email: formData.get("email"),
+      password: formData.get("password"),
+      redirect: false,
+    });
+    if (res?.error) return console.log("error");
+    if (res?.ok) return route.push("/");
+  };
 
   return (
     <div className="flex justify-center py-14 bg-gray-100 h-screen">
@@ -71,19 +68,19 @@ export default function Login() {
                 </div>
 
                 <div className="flex justify-center my-8">
-                <button className="bg-blue-600 p-2 rounded-lg text-white text-sm">Iniciar Sesion</button>  
+                  <button className="bg-blue-600 p-2 rounded-lg text-white text-sm">
+                    Iniciar Sesion
+                  </button>
                 </div>
               </div>
             </div>
           </form>
 
           <div className="flex justify-between px-2 mb-8">
-            <Link href="/register" >Registrarse</Link>
+            <Link href="/register">Registrarse</Link>
             <Link href="/">Regresar</Link>
           </div>
         </div>
-
-
       </div>
     </div>
   );

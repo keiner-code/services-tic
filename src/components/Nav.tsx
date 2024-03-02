@@ -18,14 +18,22 @@ import {
 import Image from "next/image";
 import logo from "@/assets/images/logo.png";
 import { useState } from "react";
-import { useSession } from "next-auth/react";
-import UserType from "@/types";
+import { useSession, signOut } from "next-auth/react";
 import { usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 type option = {
   menuService?: boolean;
   menuEmpresa?: boolean;
 };
+type UserType = {
+  email: string,
+  id: number,
+  image: string,
+  name: string,
+  password: string,
+  rol: string
+}
 export function Nav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [state, dispatch] = useState<option>({
@@ -33,9 +41,15 @@ export function Nav() {
     menuEmpresa: false,
   });
   const currentRouter = usePathname();
+  const router = useRouter()
   const { data, status } = useSession();
   const user = data?.user as UserType;
 
+  const handlerSession = async () => {
+    const data = await signOut({redirect: false, callbackUrl: '/'})
+    router.push(data.url)
+  }
+  
   return (
     <Navbar
       onMenuOpenChange={setIsMenuOpen}
@@ -221,9 +235,30 @@ export function Nav() {
           </Link>
         </NavbarItem>
 
+        {
+          (status == 'authenticated' && user.rol == 'Admin' ) && 
+          <NavbarItem>
+          <Link
+            color="foreground"
+            href="/dashboard"
+            aria-current="page"
+            className={`${
+              currentRouter === "/dashboard" || 
+              currentRouter === "/dashboard/users" ||
+              currentRouter === "/dashboard/products" ||
+              currentRouter === "/dashboard/images"
+                ? "border-b-2 border-b-blue-400 p-2 rounded-none"
+                : ""
+            } font-medium text-md ml-4`}
+          >
+            Dashboard
+          </Link>
+        </NavbarItem>
+        }
+
       </NavbarContent>
 
-      {/* <NavbarContent justify="end">
+      <NavbarContent justify="end">
         <NavbarItem className="lg:flex">
           <div className="flex items-center gap-4">
             {status === "unauthenticated" ? (
@@ -273,14 +308,14 @@ export function Nav() {
                     Ayuda & Comentario
                   </DropdownItem>
                   <DropdownItem key="logout" color="danger">
-                    <button onClick={() => signOut()}> Cerrar Sesión</button>
+                    <button onClick={handlerSession}>Cerrar Sesión</button>
                   </DropdownItem>
                 </DropdownMenu>
               </Dropdown>
             )}
           </div>
         </NavbarItem>
-      </NavbarContent> */}
+      </NavbarContent>
 
       <NavbarMenu className=" top-14">
         <NavbarMenuItem>

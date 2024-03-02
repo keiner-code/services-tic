@@ -14,6 +14,7 @@ export default function CardInfoRight({ service }: Props) {
           className="rounded-e-lg"
           src={service.image}
           alt={service.name}
+          blurDataURL={service.image}
         />
       </div>
 
@@ -41,6 +42,7 @@ export default function CardInfoRight({ service }: Props) {
           className="rounded-e-lg"
           src={service.image}
           alt={service.name}
+          blurDataURL={service.image}
         />
       </div>
     </div>

@@ -1,50 +1,53 @@
-import  User  from "../../../types";
-import { NextRequest } from "next/server";
-import { NextResponse } from "next/server";
-import {pool} from '../../../database/config'
+import { createClient, QueryResult } from "@vercel/postgres";
+import { User } from "../../../types";
+import { NextRequest, NextResponse } from "next/server";
+import bcrypt from "bcrypt";
 
 export async function POST(req: NextRequest, res: NextResponse) {
+  const client = createClient();
+  await client.connect();
   try {
-    const readableStream = req.body;
-    const textDecoder = new TextDecoder();
+    if (req.body) {
+      const data = (
+        await req.body?.getReader().read()
+      ).value?.toString() as string;
+      const { email, identification, image, name, password, rol, state }: User =
+        JSON.parse(data);
 
-    let datos = "";
-    if(readableStream){
-      const processStream = async () => {
-        const reader = readableStream.getReader();
+      const salt = bcrypt.genSaltSync(10);
+      const hash = bcrypt.hashSync(password, salt);
+        
+      const result: QueryResult =
+        await client.sql`INSERT INTO users (name,identification,image,rol,email,password,state)
+        VALUES (${name}, ${identification}, ${image}, ${rol}, ${email}, ${hash}, ${state})`;
 
-        while (true) {
-          const { done, value } = await reader.read();
-          if (done) {
-            break;
-          }
-          datos += textDecoder.decode(value);
-        }
-        return datos;
-      };
-      const result = await processStream();
-      const user: User = JSON.parse(result);
-
-      const connection = await pool.getConnection();
-      const [rows] = await connection.query(
-        "INSERT INTO users (name,identification,image,rol,email,password,state) VALUES (?,?,?,?,?,?,?)",
-        [
-          user.name,
-          user.identification,
-          user.image,
-          user.rol,
-          user.email,
-          user.password,
-          user.state,
-        ]
-      );
-      
-      return NextResponse.json(rows);
+      return NextResponse.json({ row: result.rowCount }, { status: 200 });
     }
   } catch (error) {
-    return NextResponse.json({
-      message: "Error Al Registrar Los Datos"
-    })
+    //si sale error hacer un console log en el catch para poder verlo
+    return NextResponse.json(
+      {
+        message: "Error Al Registrar Los Datos",
+        error,
+      },
+      { status: 500 }
+    );
+  } finally {
+    await client.end();
   }
-  
+}
+export async function GET(request: NextRequest, response) {
+  const client = createClient();
+  await client.connect();
+  try {
+    const { rows } = await client.sql`SELECT * FROM users`;
+    return NextResponse.json(rows, { status: 200 });
+  } catch (error) {
+    return NextResponse.json(
+      { message: "error interno: ", error },
+      { status: 500 }
+    );
+  } finally {
+    await client.end();
+  }
 }

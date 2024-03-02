@@ -2,8 +2,7 @@
 import { Image } from "@nextui-org/react";
 import Link from "next/link";
 import { FormEvent, useEffect, useState } from "react";
-import type { ResultSetHeader } from "@/types";
-import User from "@/types";
+import type { CreateUser, ResultSetHeader } from "@/types";
 import { useRouter } from "next/navigation";
 import { useCreateUserMutation } from "@/services/usersApi";
 import CardMessage from "@/components/Card-Message";
@@ -11,14 +10,14 @@ import CardMessage from "@/components/Card-Message";
 export default function Register() {
   const [isVisible, setIsVisible] = useState(false);
   const toggleVisibility = () => setIsVisible(!isVisible);
-  const [createUser, { isLoading, isError, error }] = useCreateUserMutation();
+  const [createUser] = useCreateUserMutation();
   const route = useRouter();
   const [message, setMessage] = useState<boolean>(false);
 
   const handlerSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const data = new FormData(e.currentTarget);
-    const user: User = {
+    const user: CreateUser = {
       name: data.get("name")?.toString() || "",
       identification: data.get("identification")?.toString() || "",
       image:
@@ -26,16 +25,24 @@ export default function Register() {
       rol: "Gestion",
       email: data.get("email")?.toString() || "",
       password: data.get("password")?.toString() || "",
-      state: "Activo",
+      state: true,
     };
     try {
-      const response: ResultSetHeader | any = await createUser(user);
-      if (response.data.affectedRows) {
-        setMessage(true);
-        route.push("/login");
+      if (
+        user.name != "" &&
+        user.identification != "" &&
+        user.email != "" &&
+        user.password != ""
+      ) {
+        const response: ResultSetHeader | any = await createUser(user);
+
+        if (response.data.row) {
+          setMessage(true);
+          route.push("/login");
+        }
       }
     } catch (error) {
-      console.error("Error al crear el contacto:", error);
+      console.error("Error al crear el usuario:", error);
     }
   };
   useEffect(() => {

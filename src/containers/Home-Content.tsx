@@ -6,9 +6,10 @@ import ProductCard from "@/components/Product-Card";
 import ServiceCard from "@/components/Services-Card";
 import { useGetAllProductsQuery } from "@/services/productApi";
 import { Service } from "@/types";
+import { Spinner } from "flowbite-react";
 
 export default function HomeContent() {
-  const { isLoading, isFetching, data, error } = useGetAllProductsQuery(null);
+  const { isLoading, data } = useGetAllProductsQuery(null);
 
   const service: Service[] = [
     {
@@ -76,8 +77,10 @@ export default function HomeContent() {
         Comercializamos Productos Tecnologicos
       </div>
       <div className="float-left pl-8 md:pl-0 md:ml-5 w-full md:w-auto">
-        {data?.map((value) => (
-          <ProductCard product={value} key={value.id} />
+        {isLoading ? 
+        <Spinner size="xl"/> :
+        data?.map((value) => (
+          <ProductCard product={value} key={value.product_id} />
           ))}
       </div>
       <div className="text-center my-10 border-b pb-2 w-full md:w-3/12 md:h-14 pt-2 font-medium text-blue-500 rounded-md shadow-xl shadow-blue-100 border--blue-100 text-2xl">

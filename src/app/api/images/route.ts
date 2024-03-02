@@ -1,6 +1,6 @@
+import { createClient, QueryResult } from "@vercel/postgres";
 import { NextRequest, NextResponse } from "next/server";
-import { CreateProduct, Product } from "@/types";
-import { QueryResult, createClient } from "@vercel/postgres";
+import { CreateImagen } from "../../../types";
 
 export async function POST(req: NextRequest, res: NextResponse) {
   const client = createClient();
@@ -10,25 +10,15 @@ export async function POST(req: NextRequest, res: NextResponse) {
       const data = (
         await req.body?.getReader().read()
       ).value?.toString() as string;
-      const {
-        amount,
-        description,
-        discount,
-        image_id,
-        maker,
-        name,
-        price,
-        state,
-      }: CreateProduct = JSON.parse(data);
+      const { image1, image2, image3, image4 }: CreateImagen = JSON.parse(data);
       const result: QueryResult =
-        await client.sql`INSERT INTO products (name, maker, amount, price, discount, description, state, image_id) VALUES 
-          (${name}, ${maker}, ${amount}, ${price}, ${discount}, ${description}, ${state}, ${image_id})`;
+        await client.sql`INSERT INTO images (image1,image2,image3,image4)
+        VALUES (${image1}, ${image2}, ${image3}, ${image4})`;
 
       return NextResponse.json({ row: result.rowCount }, { status: 200 });
     }
   } catch (error) {
-    console.log(error);
-
+    //si sale error hacer un console log en el catch para poder verlo
     return NextResponse.json(
       {
         message: "Error Al Registrar Los Datos",
@@ -44,12 +34,7 @@ export async function GET(request: NextRequest, response) {
   const client = createClient();
   await client.connect();
   try {
-    const { rows } =
-      await client.sql`SELECT p.product_id, p.name, p.maker,p.amount, 
-                                      p.price,p.discount,p.description,
-                                      p.state, p.image_id, i.image1, i.image2,
-                                      i.image3, i.image4 FROM products AS p 
-                                      INNER JOIN images AS i ON p.image_id = i.image_id`;
+    const { rows } = await client.sql`SELECT * FROM images`;
     return NextResponse.json(rows, { status: 200 });
   } catch (error) {
     return NextResponse.json(
