@@ -18,7 +18,7 @@ type UserType = {
   rol: string;
 };
 
-export function Dashboard({children}: {children: React.ReactNode}) {
+export default function Dashboard({children}: {children: React.ReactNode}) {
   const navigation = usePathname();
   const state = useSelector((value: RootState) => value?.state.alert);
   const dispatch = useDispatch();
