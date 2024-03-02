@@ -18,7 +18,7 @@ type UserType = {
   rol: string;
 };
 
-export default function Dashboard({ children }) {
+export default function Dashboard({children}: {children: React.ReactNode}) {
   const navigation = usePathname();
   const state = useSelector((value: RootState) => value?.state.alert);
   const dispatch = useDispatch();
@@ -32,7 +32,7 @@ export default function Dashboard({ children }) {
         router.push("/");
       }
     }
-  }, [status, data]);
+  }, []);
 
   useEffect(() => {
     const timer = setTimeout(() => {
