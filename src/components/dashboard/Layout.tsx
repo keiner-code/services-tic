@@ -1,9 +1,9 @@
 "use client";
 import { usePathname, useRouter } from "next/navigation";
-import Graphics from "../graphics/page";
+import Graphics from "../../app/dashboard/graphics/page";
 import Aside from "@/components/dashboard/Aside";
 import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../../store";
+import { RootState } from "../../app/store";
 import { useEffect } from "react";
 import { showAlert } from "@/features/state/stateSlice";
 import Alert from "@/components/Alert";
@@ -18,7 +18,7 @@ type UserType = {
   rol: string;
 };
 
-export default function Dashboard({children,}: {children: React.ReactNode}) {
+export default function Layout({children}: {children: React.ReactNode}) {
   const navigation = usePathname();
   const state = useSelector((value: RootState) => value?.state.alert);
   const dispatch = useDispatch();

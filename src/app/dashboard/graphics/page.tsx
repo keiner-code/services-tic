@@ -1,4 +1,4 @@
-import Dashboard from "../main/page";
+import Dashboard from "../../../components/dashboard/Layout";
 
 export default function Graphics(){
     return(

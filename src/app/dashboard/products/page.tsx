@@ -1,6 +1,6 @@
 "use client"
 import TableProducts from "@/components/dashboard/TableProduct";
-import Dashboard from "../main/page";
+import Dashboard from "../../../components/dashboard/Layout";
 import { Spinner, Table } from "flowbite-react";
 import { useGetAllProductsQuery } from "@/services/productApi";
 import { useDispatch, useSelector } from "react-redux";
