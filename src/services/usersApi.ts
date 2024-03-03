@@ -16,6 +16,7 @@ export const usersApi = createApi({
         "Access-Control-Allow-Origin",
         "https://services-tic.vercel.app"
       );
+      headers.set('Access-Control-Allow-Origin','https://www.keiner-code.com');
       headers.set(
         "Access-Control-Allow-Headers",
         "Origin, X-Requested-With, Content-Type, Accept"

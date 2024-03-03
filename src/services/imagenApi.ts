@@ -15,6 +15,7 @@ export const imagenApi = createApi({
         "Access-Control-Allow-Origin",
         "https://services-tic.vercel.app"
       );
+      headers.set("Access-Control-Allow-Origin", "https://www.keiner-code.com");
       headers.set(
         "Access-Control-Allow-Headers",
         "Origin, X-Requested-With, Content-Type, Accept"
@@ -63,8 +64,8 @@ export const imagenApi = createApi({
         const { image_id, ...body } = data;
         return {
           url: `images/${image_id}`,
-          method: 'PUT',
-          body
+          method: "PUT",
+          body,
         };
       },
       invalidatesTags: (result, error, image_id) => [
@@ -79,5 +80,5 @@ export const {
   useDeleteImagenMutation,
   useGetAllImagenQuery,
   useGetByIdImagenQuery,
-  useUpdateImagenMutation
+  useUpdateImagenMutation,
 } = imagenApi;

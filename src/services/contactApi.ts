@@ -10,6 +10,7 @@ export const contactApi = createApi({
      credentials: "same-origin", 
     prepareHeaders: (headers) => {
             headers.set('Access-Control-Allow-Origin', 'https://services-tic.vercel.app');
+            headers.set('Access-Control-Allow-Origin','https://www.keiner-code.com');
             headers.set('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
         return headers;
     },
