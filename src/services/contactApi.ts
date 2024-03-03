@@ -6,7 +6,7 @@ export const contactApi = createApi({
   reducerPath: "contactApi",
   refetchOnFocus: true,
   baseQuery: fetchBaseQuery({
-     baseUrl: process.env.NODE_ENV === 'production' ? "https://services-tic.vercel.app/api/" : "http://localhost:3000/api/",
+     baseUrl: process.env.NODE_ENV === 'production' ? "https://www.keiner-code.com/api/" : "http://localhost:3000/api/",
      credentials: "same-origin", 
     prepareHeaders: (headers) => {
             headers.set('Access-Control-Allow-Origin', 'https://services-tic.vercel.app');
