@@ -44,8 +44,6 @@ export async function PUT(request: NextRequest, { params }: Params) {
   try {
     const { productId } = params;
     const body: Product = await request.json();
-    console.log(body);
-
     if(body){
       await client.sql`UPDATE products SET name = ${body.name},
       maker = ${body.maker},

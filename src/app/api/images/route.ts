@@ -2,23 +2,19 @@ import { createClient, QueryResult } from "@vercel/postgres";
 import { NextRequest, NextResponse } from "next/server";
 import { CreateImagen } from "../../../types";
 
-export async function POST(req: NextRequest, res: NextResponse) {
+export async function POST(request: NextRequest, res: NextResponse) {
   const client = createClient();
   await client.connect();
   try {
-    if (req.body) {
-      const data = (
-        await req.body?.getReader().read()
-      ).value?.toString() as string;
-      const { image1, image2, image3, image4 }: CreateImagen = JSON.parse(data);
+    const data: CreateImagen = await request.json();
+    if (data) {
       const result: QueryResult =
         await client.sql`INSERT INTO images (image1,image2,image3,image4)
-        VALUES (${image1}, ${image2}, ${image3}, ${image4})`;
+        VALUES (${data.image1}, ${data.image2}, ${data.image3}, ${data.image4})`;
 
       return NextResponse.json({ row: result.rowCount }, { status: 200 });
     }
   } catch (error) {
-    //si sale error hacer un console log en el catch para poder verlo
     return NextResponse.json(
       {
         message: "Error Al Registrar Los Datos",

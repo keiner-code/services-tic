@@ -8,24 +8,20 @@ export async function POST(req: NextRequest, res: NextResponse) {
   await client.connect();
   try {
     if (req.body) {
-      const data = (
-        await req.body?.getReader().read()
-      ).value?.toString() as string;
-      const { email, identification, image, name, password, rol, state }: User =
-        JSON.parse(data);
+      const data: User = await req.json();
 
       const salt = bcrypt.genSaltSync(10);
-      const hash = bcrypt.hashSync(password, salt);
-        
+      const hash = bcrypt.hashSync(data.password, salt);
+
       const result: QueryResult =
         await client.sql`INSERT INTO users (name,identification,image,rol,email,password,state)
-        VALUES (${name}, ${identification}, ${image}, ${rol}, ${email}, ${hash}, ${state})`;
+        VALUES (${data.name}, ${data.identification}, ${data.image}, ${data.rol}, ${data.email}, ${hash}, ${data.state})`;
 
       return NextResponse.json({ row: result.rowCount }, { status: 200 });
     }
   } catch (error) {
     console.log(error);
-    
+
     return NextResponse.json(
       {
         message: "Error Al Registrar Los Datos",

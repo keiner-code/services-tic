@@ -1,4 +1,4 @@
-import {CreateImagen} from "../../../../types";
+import { CreateImagen } from "../../../../types";
 import { createClient, sql } from "@vercel/postgres";
 import { Params } from "next/dist/shared/lib/router/utils/route-matcher";
 import { NextResponse, NextRequest } from "next/server";
@@ -8,7 +8,8 @@ export async function DELETE(request: NextRequest, { params }: Params) {
   await client.connect();
   try {
     const { imageId } = params;
-    const { rowCount } = await sql`DELETE FROM images WHERE image_id = ${imageId}`;
+    const { rowCount } =
+      await sql`DELETE FROM images WHERE image_id = ${imageId}`;
     return NextResponse.json(rowCount, { status: 200 });
   } catch (error) {
     return NextResponse.json({
@@ -43,9 +44,7 @@ export async function PUT(request: NextRequest, { params }: Params) {
 
   try {
     const { imageId } = params;
-    const data = JSON.parse(
-      (await request.body?.getReader().read())?.value?.toString() as string
-    ) as CreateImagen;
+    const data: CreateImagen = await request.json();
     await client.sql`UPDATE images SET image1 = ${data.image1},
                         image2 = ${data.image2},
                         image3 = ${data.image3},
@@ -55,7 +54,7 @@ export async function PUT(request: NextRequest, { params }: Params) {
     return NextResponse.json({ status: 200 });
   } catch (error) {
     console.log(error);
-    
+
     return NextResponse.json(
       { message: "Error Interno en el servidor: " + error },
       { status: 500 }

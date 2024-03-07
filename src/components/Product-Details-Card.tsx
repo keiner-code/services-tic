@@ -18,6 +18,12 @@ export default function ProductDetailsCard() {
   const [amount, setAmount] = useState<number>(1);
   const [image, setImage] = useState<string | undefined>("");
   const state = useSelector((value: RootState) => value.state);
+  const [errorImg1, setErrorImg1] = useState<boolean>(false);
+  const [errorImg2, setErrorImg2] = useState<boolean>(false);
+  const [errorImg3, setErrorImg3] = useState<boolean>(false);
+  const [errorImg4, setErrorImg4] = useState<boolean>(false);
+  const urlDefault =
+    "https://img.freepik.com/vector-premium/error-404-no-encontrado-efecto-falla_8024-4.jpg?w=740";
 
   const handlerAmount = (value: boolean) => {
     const res = state.listProduct.price as number;
@@ -54,30 +60,69 @@ export default function ProductDetailsCard() {
           <div className="flex flex-col md:flex-row">
             <div className="flex flex-col md:flex-row">
               <div className="flex md:block">
-                <Image
-                  className="w-20 mb-2 cursor-pointer"
-                  src={state.listProduct.image1}
-                  onMouseOver={() => setImage(state.listProduct.image1)}
-                  alt="img1"
-                />
-                <Image
-                  className="w-20 mb-2 cursor-pointer"
-                  src={state.listProduct.image2}
-                  alt="img2"
-                  onMouseOver={() => setImage(state.listProduct.image2)}
-                />
-                <Image
-                  className="w-20 mb-2 cursor-pointer"
-                  src={state.listProduct.image3}
-                  onMouseOver={() => setImage(state.listProduct.image3)}
-                  alt="img3"
-                />
-                <Image
-                  className="w-20 mb-2 cursor-pointer"
-                  src={state.listProduct.image4}
-                  onMouseOver={() => setImage(state.listProduct.image4)}
-                  alt="img4"
-                />
+                {errorImg1 ? (
+                  <Image
+                    className="w-20 mb-2 cursor-pointer"
+                    src={urlDefault}
+                    alt={"not found 404"}
+                  />
+                ) : (
+                  <Image
+                    className="w-20 mb-2 cursor-pointer"
+                    src={state.listProduct.image1}
+                    onMouseOver={() => setImage(state.listProduct.image1)}
+                    alt="img1"
+                    onError={() => setErrorImg1(true)}
+                  />
+                )}
+
+                {errorImg2 ? (
+                  <Image
+                    className="w-20 mb-2 cursor-pointer"
+                    src={urlDefault}
+                    alt={"not found 404"}
+                  />
+                ) : (
+                  <Image
+                    className="w-20 mb-2 cursor-pointer"
+                    src={state.listProduct.image2}
+                    alt="img2"
+                    onMouseOver={() => setImage(state.listProduct.image2)}
+                    onError={() => setErrorImg2(true)}
+                  />
+                )}
+
+                {errorImg3 ? (
+                  <Image
+                    className="w-20 mb-2 cursor-pointer"
+                    src={urlDefault}
+                    alt={"not found 404"}
+                  />
+                ) : (
+                  <Image
+                    className="w-20 mb-2 cursor-pointer"
+                    src={state.listProduct.image3}
+                    onMouseOver={() => setImage(state.listProduct.image3)}
+                    alt="img3"
+                    onError={() => setErrorImg3(true)}
+                  />
+                )}
+
+                {errorImg4 ? (
+                  <Image
+                    className="w-20 mb-2 cursor-pointer"
+                    src={urlDefault}
+                    alt={"not found 404"}
+                  />
+                ) : (
+                  <Image
+                    className="w-20 mb-2 cursor-pointer"
+                    src={state.listProduct.image4}
+                    onMouseOver={() => setImage(state.listProduct.image4)}
+                    onError={() => setErrorImg4(true)}
+                    alt="img4"
+                  />
+                )}
               </div>
               <Image
                 className="w-11/12 md:w-[30.5rem] ml-2"

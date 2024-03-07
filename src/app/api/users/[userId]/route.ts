@@ -1,4 +1,4 @@
-import {User} from "../../../../types/index";
+import { User } from "../../../../types/index";
 import { createClient, sql } from "@vercel/postgres";
 import { Params } from "next/dist/shared/lib/router/utils/route-matcher";
 import { NextResponse, NextRequest } from "next/server";
@@ -43,19 +43,19 @@ export async function PUT(request: NextRequest, { params }: Params) {
 
   try {
     const { userId } = params;
-    const data = JSON.parse(
-      (await request.body?.getReader().read())?.value?.toString() as string
-    ) as User;
-    await client.sql`UPDATE users SET name = ${data.name},
-                        identification = ${data.identification},
-                        image = ${data.image},
-                        rol = ${data.rol},
-                        email = ${data.email},
-                        password = ${data.password},
-                        state = ${data.state}
-                        WHERE user_id = ${userId}`;
+    const data: User = await request.json();
+    if (data) {
+      await client.sql`UPDATE users SET name = ${data.name},
+      identification = ${data.identification},
+      image = ${data.image},
+      rol = ${data.rol},
+      email = ${data.email},
+      password = ${data.password},
+      state = ${data.state}
+      WHERE user_id = ${userId}`;
 
-    return NextResponse.json({ status: 200 });
+      return NextResponse.json({ status: 200 });
+    }
   } catch (error) {
     return NextResponse.json(
       { message: "Error Interno en el servidor: " + error },

@@ -6,23 +6,11 @@ export async function POST(req: NextRequest, res: NextResponse) {
   const client = createClient();
   await client.connect();
   try {
-    if (req.body) {
-      const data = (
-        await req.body?.getReader().read()
-      ).value?.toString() as string;
-      const {
-        amount,
-        description,
-        discount,
-        image_id,
-        maker,
-        name,
-        price,
-        state,
-      }: CreateProduct = JSON.parse(data);
+    const data: CreateProduct = await req.json();
+    if (data) {
       const result: QueryResult =
         await client.sql`INSERT INTO products (name, maker, amount, price, discount, description, state, image_id) VALUES 
-          (${name}, ${maker}, ${amount}, ${price}, ${discount}, ${description}, ${state}, ${image_id})`;
+        (${data.name}, ${data.maker}, ${data.amount}, ${data.price}, ${data.discount}, ${data.description}, ${data.state}, ${data.image_id})`;
 
       return NextResponse.json({ row: result.rowCount }, { status: 200 });
     }
