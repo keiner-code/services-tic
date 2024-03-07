@@ -43,24 +43,18 @@ export async function PUT(request: NextRequest, { params }: Params) {
 
   try {
     const { productId } = params;
-    const response = await request.body?.getReader().read();
-    console.log('response->',response);
-    
-    const redeaStream = response?.value?.toString();
-    console.log('redestreable->',redeaStream);
+    const body: Product = await request.json();
+    console.log(body);
 
-    if(redeaStream){
-      const data = JSON.parse(redeaStream) as Product;
-      console.log('data->',data);
-      
-      await client.sql`UPDATE products SET name = ${data.name},
-      maker = ${data.maker},
-      amount = ${data.amount},
-      price = ${data.price},
-      discount = ${data.discount},
-      description = ${data.description},
-      state = ${data.state},
-      image_id = ${data.image_id}
+    if(body){
+      await client.sql`UPDATE products SET name = ${body.name},
+      maker = ${body.maker},
+      amount = ${body.amount},
+      price = ${body.price},
+      discount = ${body.discount},
+      description = ${body.description},
+      state = ${body.state},
+      image_id = ${body.image_id}
                           WHERE product_id = ${productId}`;
     }
     return NextResponse.json({ status: 200 });
