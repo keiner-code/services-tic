@@ -26,7 +26,7 @@ export default function ModalUpdateUser() {
   ) => {
     const { name, value } = event.target;
     let isActive: boolean | undefined = undefined;
-
+    
     if (value == "Activo") {
       isActive = true;
     }
@@ -92,7 +92,7 @@ export default function ModalUpdateUser() {
             value={input.image || ""}
             className="w-full h-8 border rounded-md outline-none bg-transparent"
             type="text"
-            name="imagen"
+            name="image"
             onChange={handleInputChange}
           />
         </div>

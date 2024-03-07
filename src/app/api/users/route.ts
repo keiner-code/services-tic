@@ -24,7 +24,8 @@ export async function POST(req: NextRequest, res: NextResponse) {
       return NextResponse.json({ row: result.rowCount }, { status: 200 });
     }
   } catch (error) {
-    //si sale error hacer un console log en el catch para poder verlo
+    console.log(error);
+    
     return NextResponse.json(
       {
         message: "Error Al Registrar Los Datos",

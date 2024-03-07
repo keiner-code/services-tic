@@ -58,6 +58,7 @@ export async function PUT(request: NextRequest, { params }: Params) {
 
     return NextResponse.json({ status: 200 });
   } catch (error) {
+    console.error(error);
     return NextResponse.json(
       { message: "Error Interno en el servidor: " + error },
       { status: 500 }
