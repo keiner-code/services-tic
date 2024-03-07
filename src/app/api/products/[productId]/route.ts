@@ -63,11 +63,6 @@ export async function PUT(request: NextRequest, { params }: Params) {
       image_id = ${data.image_id}
                           WHERE product_id = ${productId}`;
     }
-    /* const data = JSON.parse(
-      (await request.body?.getReader().read())?.value?.toString() as string
-    ) as Product; */
-
-
     return NextResponse.json({ status: 200 });
   } catch (error) {
     console.error(error);
